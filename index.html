@@ -1,0 +1,1224 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escola Castelo Encantado · Educação Infantil e Fundamental I em Recife</title>
+<meta name="description" content="Há 27 anos educando com amor em Casa Amarela, Recife. Educação Infantil e Fundamental I com ensino bilíngue, valores cristãos e estrutura completa. Matrículas abertas.">
+<meta name="theme-color" content="#C61108">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Escola Castelo Encantado · Recife">
+<meta property="og:description" content="Há 27 anos educando com amor. Black Friday das Fardas: condições especiais na matrícula 2027 até 30/11.">
+<meta property="og:image" content="assets/home-01.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='7' y='31' width='12' height='25' fill='%23C6C8CC'/%3E%3Crect x='45' y='31' width='12' height='25' fill='%23C6C8CC'/%3E%3Crect x='19' y='38' width='26' height='18' fill='%23D9DBDE'/%3E%3Crect x='25' y='22' width='14' height='34' fill='%23C6C8CC'/%3E%3Cpath d='M7 31 L13 15 L19 31Z M45 31 L51 15 L57 31Z M25 22 L32 6 L39 22Z M28.5 56 V48 a3.5 3.5 0 0 1 7 0 V56Z' fill='%23C61108'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+body{margin:0}
+h1,h2,h3{font-family:'Baloo 2','Nunito',sans-serif;margin:0;line-height:1.12}
+p{margin:0}
+button{font:inherit;cursor:pointer}
+a{color:#C61108}a:hover{color:#2E3136}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #111315;outline-offset:2px}
+@keyframes ce-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ce-marquee{animation:ce-marquee 45s linear infinite}
+.ce-tick:hover .ce-marquee,.ce-tick:focus-visible .ce-marquee{animation-play-state:paused}
+@keyframes ce-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.ce-rise{animation:ce-rise .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ce-fade{from{opacity:0}to{opacity:1}}
+.ce-fade{animation:ce-fade .6s ease both}
+@keyframes ce-wobble{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(-3deg) scale(1.07)}}
+.ce-wobble{animation:ce-wobble 2.6s ease-in-out infinite}
+@keyframes ce-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.ce-float{animation:ce-float 5s ease-in-out infinite}
+@keyframes ce-pulse{0%{box-shadow:0 0 0 0 rgba(198,17,8,.7)}70%{box-shadow:0 0 0 16px rgba(198,17,8,0)}100%{box-shadow:0 0 0 0 rgba(198,17,8,0)}}
+.ce-pulse{animation:ce-pulse 1.8s ease-out infinite}
+@keyframes ce-twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+.ce-twinkle{animation:ce-twinkle 2.8s ease-in-out infinite}
+@keyframes ce-msg{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.ce-msg{animation:ce-msg .35s cubic-bezier(.2,.8,.2,1) both}
+@keyframes ce-dot{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-5px);opacity:1}}
+.ce-dot{animation:ce-dot 1.1s ease-in-out infinite}
+@keyframes ce-pop{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
+.ce-pop{animation:ce-pop .5s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion: reduce){.ce-marquee,.ce-rise,.ce-fade,.ce-wobble,.ce-float,.ce-pulse,.ce-twinkle,.ce-msg,.ce-dot,.ce-pop{animation:none!important}}
+</style>
+<style>[v-cloak]{display:none}</style>
+</head>
+<body>
+<div id="app" v-cloak>
+<div :style="`--p: ${primary}; --a: ${accent}; --ink: #2E3136; --mut: #5A5F66; --bg: #F4F4F5; --line: #DDDEE1; --tint: #ECEDEF; font-family: 'Nunito', system-ui, sans-serif; color: var(--ink); background: var(--bg); font-size: 17px; line-height: 1.6`">
+
+<!-- Faixa animada da Black Friday -->
+<button class="ce-tick" @click="goBF" aria-label="Black Friday das Fardas: ver a oferta" style="display: block; width: 100%; border: 0; padding: 0; background: var(--p); color: #fff; overflow: hidden; cursor: pointer">
+<span class="ce-marquee" style="display: flex; width: max-content; padding: 9px 0; font-weight: 800; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap">
+<div v-for="tk in ticker" style="display:contents">
+<span style="display: inline-flex; align-items: center; gap: 18px; padding-right: 18px"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 Q12 12 23 12 Q12 12 12 23 Q12 12 1 12 Q12 12 12 1Z" fill="#ffffff"></path></svg>{{tk.t}}</span>
+</div>
+</span>
+</button>
+
+<!-- Faixa superior -->
+<div style="background: var(--ink); color: #fff; font-size: 14px">
+<div style="max-width: 1160px; margin: 0 auto; padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between">
+<span>Rua Clodomiro Selva, 194 · Casa Amarela · Recife/PE</span>
+<span>(81) 3269-4368 · WhatsApp (81) 9 8682-4364</span>
+</div>
+</div>
+
+<!-- Cabeçalho -->
+<header style="background: #fff; border-bottom: 1px solid var(--line)">
+<div style="max-width: 1160px; margin: 0 auto; padding: 14px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px">
+<button @click="goHome" aria-label="Escola Castelo Encantado — página inicial" style="display: flex; align-items: center; gap: 12px; background: none; border: 0; padding: 0; text-align: left; color: var(--ink)">
+<svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true">
+<rect x="19" y="39" width="26" height="17" fill="#D9DBDE"></rect>
+<rect x="19" y="36" width="26" height="3.5" fill="#9B9EA3"></rect>
+<rect x="7" y="31" width="12" height="25" fill="#C6C8CC"></rect>
+<rect x="45" y="31" width="12" height="25" fill="#C6C8CC"></rect>
+<rect x="6" y="28" width="14" height="4" fill="#9B9EA3"></rect>
+<rect x="44" y="28" width="14" height="4" fill="#9B9EA3"></rect>
+<rect x="25" y="23" width="14" height="33" fill="#C6C8CC"></rect>
+<rect x="24" y="20" width="16" height="4" fill="#9B9EA3"></rect>
+<path d="M7 28 L13 14 L19 28 Z" fill="var(--p)"></path>
+<path d="M45 28 L51 14 L57 28 Z" fill="var(--p)"></path>
+<path d="M26 20 L32 7 L38 20 Z" fill="var(--p)"></path>
+<path d="M20.5 36 L22 30 L23.5 36 Z" fill="var(--p)"></path>
+<path d="M40.5 36 L42 30 L43.5 36 Z" fill="var(--p)"></path>
+<path d="M13 14 V8 M32 7 V1 M51 14 V8" stroke="#7F8084" stroke-width="0.8" fill="none"></path>
+<path d="M13 8 L19 9.5 L13 11 Z M32 1 L38 2.5 L32 4 Z M51 8 L57 9.5 L51 11 Z" fill="var(--p)"></path>
+<path d="M28.5 56 V48 a3.5 3.5 0 0 1 7 0 V56 Z" fill="var(--p)"></path>
+<rect x="11.5" y="37" width="3" height="6" rx="1.5" fill="var(--p)"></rect>
+<rect x="49.5" y="37" width="3" height="6" rx="1.5" fill="var(--p)"></rect>
+<rect x="30.5" y="28" width="3" height="6" rx="1.5" fill="var(--p)"></rect>
+<rect x="21.5" y="44" width="2.5" height="5" rx="1.2" fill="var(--p)"></rect>
+<rect x="40" y="44" width="2.5" height="5" rx="1.2" fill="var(--p)"></rect>
+<rect x="4" y="56" width="56" height="3" rx="1" fill="#7F8084"></rect>
+</svg>
+<span style="display: flex; flex-direction: column; line-height: 1">
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.22em; color: var(--mut)">ESCOLA</span>
+<span style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 25px; color: var(--p)">Castelo Encantado</span>
+</span>
+</button>
+<a href="https://wa.me/message/RUURY44UE3QYP1" style="background: var(--p); color: #fff; font-weight: 800; text-decoration: none; padding: 11px 20px; border-radius: 999px; min-height: 22px">Fale no WhatsApp</a>
+</div>
+<nav aria-label="Menu principal" style="max-width: 1160px; margin: 0 auto; padding: 0 20px 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px">
+<div v-for="n in nav" style="display:contents">
+<button @click="n.go" :style="`white-space: nowrap; border: 0; border-radius: 999px; padding: 10px 12px; min-height: 44px; font-weight: 700; font-size: 15px; background: ${n.bg}; color: ${n.fg}`">{{n.label}}</button>
+</div>
+</nav>
+</header>
+
+<main>
+
+<!-- ============ INÍCIO ============ -->
+<div v-if="isHome" style="display:contents">
+<section aria-roledescription="carrossel" aria-label="Destaques da escola" @mouseenter="hoverOn" @mouseleave="hoverOff" :style="`position: relative; overflow: hidden; color: #fff; background: ${heroBg}; transition: background 0.6s ease`">
+
+<!-- Destaque 1: Black Friday das Fardas -->
+<div v-if="isSlide0" style="display:contents">
+<div role="group" aria-roledescription="slide" aria-label="Destaque 1 de 2: Black Friday das Fardas" style="position: relative">
+<svg aria-hidden="true" width="100%" height="100%" style="position: absolute; inset: 0; pointer-events: none">
+<path class="ce-twinkle" d="M60 50 Q60 64 74 64 Q60 64 60 78 Q60 64 46 64 Q60 64 60 50Z" fill="#ffffff"></path>
+<circle class="ce-twinkle" style="animation-delay: 0.9s" cx="47%" cy="9%" r="4" fill="#ffffff"></circle>
+<circle class="ce-twinkle" style="animation-delay: 0.4s" cx="38%" cy="18%" r="3" fill="#ffffff"></circle>
+<circle class="ce-twinkle" style="animation-delay: 1.3s" cx="52%" cy="82%" r="4" fill="#ffffff"></circle>
+<circle class="ce-twinkle" style="animation-delay: 2s" cx="94%" cy="14%" r="3" fill="#ffffff"></circle>
+<circle class="ce-twinkle" style="animation-delay: 0.7s" cx="6%" cy="78%" r="3" fill="#ffffff"></circle>
+<circle class="ce-twinkle" style="animation-delay: 1.7s" cx="88%" cy="88%" r="4" fill="#C61108"></circle>
+<circle class="ce-twinkle" style="animation-delay: 2.4s" cx="30%" cy="90%" r="3" fill="#C61108"></circle>
+</svg>
+<div style="position: relative; max-width: 1160px; margin: 0 auto; padding: 56px 20px 100px; min-height: 470px; display: flex; flex-wrap: wrap; gap: 44px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span class="ce-rise" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: var(--p); color: #fff; border-radius: 999px; padding: 7px 16px; font-weight: 800; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase">Oferta imperdível · só até 30/11</span>
+<h1 class="ce-rise" style="font-size: clamp(46px, 7vw, 86px); font-weight: 800; line-height: 1; animation-delay: 0.08s">Black Friday<br><span style="display: inline-block; margin-top: 10px; background: var(--p); padding: 2px 20px 8px; border-radius: 18px; transform: rotate(-2deg)">das Fardas</span></h1>
+<p class="ce-rise" style="font-size: 20px; max-width: 540px; color: #E4E5E7; animation-delay: 0.16s">Matricule seu filho para 2027 com condições especiais de Black Friday. Uma oportunidade que só acontece até 30/11.</p>
+<div class="ce-rise" style="animation-delay: 0.24s">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #B5B8BD">A oferta termina em</span>
+<div role="timer" :aria-label="`Tempo restante da oferta: ${cdText}`" style="display: flex; gap: 8px; margin-top: 8px; max-width: 340px">
+<div v-for="c in cd" style="display:contents">
+<div style="flex: 1 1 0; min-width: 0; box-sizing: border-box; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 8px 4px; text-align: center">
+<div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 36px; line-height: 1; font-variant-numeric: tabular-nums">{{c.n}}</div>
+<div style="font-size: 12px; font-weight: 700; color: #B5B8BD">{{c.l}}</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ce-rise" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: 0.32s">
+<a class="ce-pulse" href="https://wa.me/message/RUURY44UE3QYP1" style="background: var(--p); color: #fff; text-decoration: none; border-radius: 999px; padding: 14px 28px; font-weight: 800; font-size: 17px">Garantir minha vaga</a>
+<button @click="goMatriculas" style="background: transparent; color: #fff; border: 2px solid #fff; border-radius: 999px; padding: 12px 26px; font-weight: 800; font-size: 17px">Ver matrículas</button>
+</div>
+<p class="ce-rise" style="font-size: 13px; color: #B5B8BD; animation-delay: 0.4s">Válido para matrículas e rematrículas 2027 feitas até 30/11/2026. Consulte as condições na secretaria.</p>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+<div class="ce-float" style="position: relative; width: 100%; max-width: 420px">
+<img class="ce-fade" src="assets/home-08.jpg" alt="Duas alunas sorrindo, com a farda da Escola Castelo Encantado" style="display: block; width: 100%; height: 400px; object-fit: cover; border-radius: 28px; border: 8px solid #fff; box-sizing: border-box; transform: rotate(2deg); box-shadow: 0 30px 70px rgba(0,0,0,0.5)">
+<div class="ce-wobble" style="position: absolute; left: -16px; top: -24px; width: 136px; height: 136px; border-radius: 50%; background: var(--p); color: #fff; border: 4px dashed rgba(255,255,255,0.75); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; line-height: 1.05; box-shadow: 0 14px 30px rgba(0,0,0,0.4)"><span style="font-size: 14px">condições</span><span style="font-size: 25px">especiais</span><span style="font-size: 13px">até 30/11</span></div>
+<span style="position: absolute; right: -8px; bottom: 24px; background: #fff; color: var(--ink); border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 14px; box-shadow: 0 10px 24px rgba(0,0,0,0.35); transform: rotate(-3deg)">Matrícula 2027</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Destaque 2: a escola -->
+<div v-if="isSlide1" style="display:contents">
+<div role="group" aria-roledescription="slide" aria-label="Destaque 2 de 2: a escola" class="ce-fade" style="max-width: 1160px; margin: 0 auto; padding: 56px 20px 100px; min-height: 470px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 20px">
+<span class="ce-rise" style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Educação Infantil e Fundamental I · Casa Amarela, Recife</span>
+<h1 class="ce-rise" style="font-size: clamp(40px, 6vw, 68px); font-weight: 800; animation-delay: 0.08s">Há 27 anos educando com amor.</h1>
+<p class="ce-rise" style="font-size: 19px; max-width: 520px; animation-delay: 0.16s">Um ambiente acolhedor e seguro, onde cada criança é valorizada em sua individualidade e incentivada a crescer com valores sólidos.</p>
+<div class="ce-rise" style="display: flex; flex-wrap: wrap; gap: 12px; animation-delay: 0.24s">
+<button @click="goContato" style="background: #fff; color: var(--p); border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800; font-size: 17px">Agende uma visita</button>
+<button @click="goMatriculas" style="background: transparent; color: #fff; border: 2px solid #fff; border-radius: 999px; padding: 12px 26px; font-weight: 800; font-size: 17px">Matrículas abertas</button>
+</div>
+</div>
+<img src="assets/home-01.jpg" alt="Alunos da Escola Castelo Encantado deitados na grama, sorrindo" style="flex: 1 1 360px; min-width: 0; width: 100%; height: 380px; object-fit: cover; border-radius: 28px">
+</div>
+</div>
+
+<!-- Controles do carrossel -->
+<div style="position: absolute; left: 0; right: 0; bottom: 26px">
+<div style="max-width: 1160px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px">
+<button @click="prevSlide" aria-label="Destaque anterior" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,0.3); color: #fff; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 L8 12 L15 19" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<div v-for="d in dots" style="display:contents">
+<button @click="d.pick" :aria-label="d.label" :aria-current="d.cur" style="width: 44px; height: 44px; border: 0; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center"><span :style="`display: block; width: ${d.w}; height: 10px; border-radius: 999px; background: ${d.bg}; transition: width 0.3s ease`"></span></button>
+</div>
+<button @click="nextSlide" aria-label="Próximo destaque" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,0.3); color: #fff; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 L16 12 L9 19" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<button @click="togglePause" :aria-label="pauseLabel" style="width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; padding: 0; margin-left: 4px">
+<div v-if="bfPaused" style="display:contents"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4 L20 12 L7 20 Z" fill="#ffffff"></path></svg></div>
+<div v-if="bfPlaying" style="display:contents"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1" fill="#ffffff"></rect><rect x="14" y="4" width="4" height="16" rx="1" fill="#ffffff"></rect></svg></div>
+</button>
+<div aria-hidden="true" style="flex: 0 1 140px; height: 4px; margin-left: 10px; background: rgba(255,255,255,0.25); border-radius: 999px; overflow: hidden"><div :style="`height: 100%; width: ${bfProg}; background: #fff; transition: ${progTr}`"></div></div>
+</div>
+</div>
+<div aria-hidden="true" style="height: 16px; background: repeating-linear-gradient(90deg, var(--bg) 0 30px, transparent 30px 60px)"></div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 40px 20px 8px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div v-for="s in numeros" style="display:contents">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px">
+<div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 44px; line-height: 1; color: var(--p)">{{s.n}}</div>
+<div style="color: var(--mut); font-weight: 600">{{s.t}}</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<h2 style="font-size: clamp(30px, 4vw, 42px); font-weight: 800; max-width: 640px">O que torna a nossa proposta diferente</h2>
+<p style="color: var(--mut); max-width: 680px; margin-top: 10px">Fundamentada em valores cristãos, com abordagem prática e interativa que desperta a curiosidade e o prazer em aprender.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 28px">
+<div v-for="d in diferenciais" style="display:contents">
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img :src="d.img" :alt="d.t" style="width: 100%; height: 210px; object-fit: cover; display: block">
+<div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="font-size: 23px; font-weight: 700">{{d.t}}</h3>
+<p style="color: var(--mut); font-size: 16px">{{d.x}}</p>
+</div>
+</article>
+</div>
+</div>
+<button @click="goProposta" style="margin-top: 26px; background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 13px 24px; font-weight: 800">Ver a proposta pedagógica</button>
+</section>
+
+<section style="background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line)">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="font-size: clamp(30px, 4vw, 42px); font-weight: 800">No Castelo, as crianças têm</h2>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<div v-for="a in atividades" style="display:contents">
+<li style="display: flex; gap: 12px; align-items: center; font-weight: 700; font-size: 18px"><span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 3px; background: var(--a); flex: none"></span>{{a}}</li>
+</div>
+</ul>
+<div><button @click="goInfra" style="margin-top: 8px; background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 13px 24px; font-weight: 800">Conheça a nossa estrutura</button></div>
+</div>
+<div style="flex: 1 1 380px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<img src="assets/home-06.jpg" alt="Alunas na aula de natação" style="width: 100%; height: 190px; object-fit: cover; border-radius: 20px; display: block">
+<img src="assets/home-07.jpg" alt="Alunas na aula de ballet" style="width: 100%; height: 190px; object-fit: cover; border-radius: 20px; display: block">
+<img src="assets/home-08.jpg" alt="Duas alunas sorrindo, com o uniforme da escola" style="width: 100%; height: 190px; object-fit: cover; border-radius: 20px; display: block">
+<img src="assets/home-09.jpg" alt="Turma em apresentação sobre astronomia" style="width: 100%; height: 190px; object-fit: cover; border-radius: 20px; display: block">
+</div>
+</div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<div style="background: var(--a); color: var(--ink); border-radius: 28px; padding: 36px 32px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
+<img src="assets/matr-00.jpg" alt="Arte da campanha Matrículas Abertas" style="width: 160px; height: 160px; object-fit: cover; border-radius: 20px; flex: none">
+<div style="flex: 1 1 380px">
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800">Matrículas abertas</h2>
+<p style="font-weight: 600; max-width: 560px">Condições especiais para matrículas e rematrículas antecipadas. Vagas limitadas por turma.</p>
+</div>
+<button @click="goMatriculas" style="background: var(--ink); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Garanta a vaga</button>
+</div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 0 20px 48px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+<article style="background: var(--p); color: #fff; border-radius: 28px; padding: 30px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--a)">Para as famílias</span>
+<h2 style="font-size: 30px; font-weight: 800">Qual a turma ideal para o seu filho?</h2>
+<p>Responda duas perguntas e descubra em que turma a criança entra.</p>
+<button @click="goTurma" style="margin-top: 6px; background: #fff; color: var(--p); border: 0; border-radius: 999px; padding: 13px 24px; font-weight: 800">Descobrir a turma</button>
+</article>
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 30px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--p)">Para as crianças</span>
+<h2 style="font-size: 30px; font-weight: 800">Quiz Verde: você cuida da natureza?</h2>
+<p style="color: var(--mut)">Seis perguntas sobre água, reciclagem e horta, inspiradas no Projeto Verde.</p>
+<button @click="goVerde" style="margin-top: 6px; background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 13px 24px; font-weight: 800">Jogar o quiz</button>
+</article>
+</div>
+</section>
+
+<section style="max-width: 1160px; margin: 0 auto; padding: 0 20px 56px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: end; justify-content: space-between">
+<h2 style="font-size: clamp(30px, 4vw, 42px); font-weight: 800">Últimas do blog</h2>
+<button @click="goBlog" style="background: none; border: 0; color: var(--p); font-weight: 800; padding: 10px 0; min-height: 44px; text-decoration: underline">Ver todas as postagens</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px">
+<div v-for="p in latest" style="display:contents">
+<button @click="p.open" style="text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 0; overflow: hidden; display: flex; flex-direction: column; gap: 8px; color: var(--ink)">
+<img :src="p.img" alt="" style="width: 100%; height: 220px; object-fit: cover; object-position: top; display: block">
+<span style="margin: 8px 22px 0; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--p)">{{p.c}}</span>
+<span style="margin: 0 22px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.15">{{p.t}}</span>
+<span style="margin: 0 22px 22px; color: var(--mut); font-size: 15px">{{p.data}}</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ MATRÍCULAS ============ -->
+<div v-if="isMatriculas" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Matrículas e rematrículas</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px">Matrículas abertas</h1>
+<p style="font-size: 19px; max-width: 700px; margin-top: 12px">Garanta o futuro do seu filho em um ambiente acolhedor e estimulante, com educação baseada em valores, desenvolvimento integral e carinho.</p>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 48px 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 8px">
+<img src="assets/matr-00.jpg" alt="Arte da campanha Matrículas Abertas" style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px; display: block; margin-bottom: 8px">
+<h2 style="font-size: 25px; font-weight: 700">Desconto antecipado</h2>
+<p style="color: var(--mut)">Condições especiais para matrículas e rematrículas feitas até <strong style="color: var(--ink)">19/12/2026</strong>. Vagas sujeitas à disponibilidade.</p>
+</article>
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 8px">
+<img src="assets/matr-01.jpg" alt="Arte da campanha: o futuro do seu filho começa com um ensino de qualidade" style="width: 100%; height: 220px; object-fit: cover; object-position: top; border-radius: 14px; display: block; margin-bottom: 8px">
+<h2 style="font-size: 25px; font-weight: 700">Brinde estudantil</h2>
+<p style="color: var(--mut)">Novos alunos e rematriculados até [PRAZO] recebem um brinde exclusivo para começar o ano letivo preparados.</p>
+</article>
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 8px">
+<img src="assets/home-00.jpg" alt="Arte da campanha: aprender é poder voar mais alto" style="width: 100%; height: 220px; object-fit: cover; object-position: left; border-radius: 14px; display: block; margin-bottom: 8px">
+<h2 style="font-size: 25px; font-weight: 700">Sorteio para as famílias</h2>
+<p style="color: var(--mut)">Pais de novos alunos e rematriculados até [PRAZO] participam de um sorteio exclusivo.</p>
+</article>
+</div>
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800; margin-top: 48px">Como garantir a vaga</h2>
+<ol style="margin: 20px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<li style="background: var(--tint); border-radius: 22px; padding: 24px"><div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; color: var(--p)">1</div><h3 style="font-size: 21px; font-weight: 700; margin-top: 6px">Fale com a secretaria</h3><p style="color: var(--mut); font-size: 16px">Pelo WhatsApp, telefone ou formulário de contato.</p></li>
+<li style="background: var(--tint); border-radius: 22px; padding: 24px"><div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; color: var(--p)">2</div><h3 style="font-size: 21px; font-weight: 700; margin-top: 6px">Visite a escola</h3><p style="color: var(--mut); font-size: 16px">Conheça os espaços e a equipe pessoalmente.</p></li>
+<li style="background: var(--tint); border-radius: 22px; padding: 24px"><div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; color: var(--p)">3</div><h3 style="font-size: 21px; font-weight: 700; margin-top: 6px">Reserve a vaga</h3><p style="color: var(--mut); font-size: 16px">[DOCUMENTOS E ETAPAS DA MATRÍCULA — a confirmar com a escola]</p></li>
+</ol>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a href="https://wa.me/message/RUURY44UE3QYP1" style="background: var(--a); color: var(--ink); text-decoration: none; border-radius: 999px; padding: 14px 26px; font-weight: 800">Falar no WhatsApp</a>
+<button @click="goContato" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Agendar uma visita</button>
+<button @click="goTurma" style="background: #fff; color: var(--p); border: 2px solid var(--p); border-radius: 999px; padding: 12px 26px; font-weight: 800">Descobrir a turma ideal</button>
+</div>
+</section>
+</div>
+
+<!-- ============ SOBRE ============ -->
+<div v-if="isSobre" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Sobre nós</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px; max-width: 760px">Um castelo de aprendizado e amor</h1>
+<p style="font-size: 19px; max-width: 720px; margin-top: 12px">Fundada há 27 anos, a Escola Castelo Encantado tem como missão proporcionar uma educação integral, fundamentada em valores cristãos e no compromisso com o desenvolvimento ético e moral das crianças.</p>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 48px 20px; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<img src="assets/sobre-00.jpg" alt="Turma de alunos reunida no gramado, com roupas vermelhas" style="width: 100%; height: 300px; object-fit: cover; border-radius: 28px; display: block">
+<img src="assets/proposta-13.jpg" alt="Aluna participando de uma atividade com um educador" style="width: 100%; height: 300px; object-fit: cover; border-radius: 28px; display: block">
+</div>
+<div style="flex: 2 1 460px; display: flex; flex-direction: column; gap: 26px">
+<div v-for="b in sobre" style="display:contents">
+<div style="border-left: 0; padding: 0">
+<h2 style="font-size: 27px; font-weight: 700; color: var(--p)">{{b.t}}</h2>
+<p style="color: var(--mut); margin-top: 6px">{{b.x}}</p>
+</div>
+</div>
+<p style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.25">Mais que uma escola: uma extensão do lar, onde a formação de caráter, o amor ao próximo e o aprendizado andam de mãos dadas.</p>
+</div>
+</section>
+</div>
+
+<!-- ============ PROPOSTA ============ -->
+<div v-if="isProposta" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Proposta pedagógica</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px; max-width: 800px">Aprender com autonomia, curiosidade e responsabilidade</h1>
+<p style="font-size: 19px; max-width: 720px; margin-top: 12px">Metodologias ativas e projetos interdisciplinares que incentivam a participação, a criatividade e o pensamento crítico, respeitando o ritmo de cada aluno.</p>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 48px 20px">
+<img src="assets/proposta-00.jpg" alt="Ilustração de crianças lendo juntas em sala de aula" style="width: 100%; height: 340px; object-fit: cover; border-radius: 28px; display: block; margin-bottom: 36px">
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800">Os quatro pilares do sistema de ensino</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 20px">
+<div v-for="pl in pilares" style="display:contents">
+<div style="background: var(--p); color: #fff; border-radius: 22px; padding: 24px"><div style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 34px; line-height: 1; color: var(--a)">{{pl.n}}</div><h3 style="font-size: 21px; font-weight: 700; margin-top: 8px">{{pl.t}}</h3></div>
+</div>
+</div>
+
+<div style="margin-top: 48px; background: var(--tint); border-radius: 28px; padding: 32px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center">
+<img src="assets/proposta-12.jpg" alt="Alunas em frente ao mural do Dia da Água" style="width: 200px; height: 200px; object-fit: cover; border-radius: 20px; flex: none">
+<div style="flex: 1 1 380px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--p)">Novidade</span>
+<h2 style="font-size: clamp(26px, 3.6vw, 34px); font-weight: 800; margin-top: 4px">Educação ambiental e Projeto Verde ampliado</h2>
+<p style="color: var(--mut); margin-top: 8px">Jardinagem, oficinas de reciclagem, reaproveitamento de materiais e atividades ao ar livre para aprender, na prática, sobre preservação e responsabilidade social.</p>
+</div>
+<button @click="goSelo" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 13px 24px; font-weight: 800">Conheça o Selo Sustentável</button>
+</div>
+
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800; margin-top: 48px">Abordagens práticas</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px">
+<div v-for="pr in praticas" style="display:contents">
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img :src="pr.img" alt="" style="width: 100%; height: 220px; object-fit: cover; display: block">
+<div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="font-size: 22px; font-weight: 700">{{pr.t}}</h3>
+<p style="color: var(--mut); font-size: 16px">{{pr.x}}</p>
+</div>
+</article>
+</div>
+</div>
+
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800; margin-top: 48px">Nossos programas</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px">
+<div v-for="pg in programas" style="display:contents">
+<article style="background: var(--tint); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img :src="pg.img" alt="" style="width: 100%; height: 220px; object-fit: cover; display: block">
+<div style="padding: 20px 24px 26px; display: flex; flex-direction: column; gap: 6px">
+<h3 style="font-size: 24px; font-weight: 700; color: var(--p)">{{pg.t}}</h3>
+<p style="color: var(--mut); font-size: 16px">{{pg.x}}</p>
+</div>
+</article>
+</div>
+</div>
+
+<div style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px">
+<img src="assets/news-09.jpg" alt="Arte da avaliação das Olimpíadas de Astronomia e Astronáutica" style="width: 100%; height: 220px; object-fit: cover; border-radius: 14px; display: block; margin-bottom: 14px">
+<h3 style="font-size: 24px; font-weight: 700">Olimpíadas do conhecimento</h3>
+<p style="color: var(--mut); font-size: 16px; margin-top: 6px">Nossos alunos participam da Olimpíada Brasileira de Astronomia e Astronáutica (OBA) e da Olimpíada Canguru de Matemática, estimulando o raciocínio lógico e a confiança diante de novos desafios.</p>
+</article>
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px">
+<img src="assets/proposta-05.jpg" alt="Mãe e filho em um evento da escola" style="width: 100%; height: 220px; object-fit: cover; object-position: top; border-radius: 14px; display: block; margin-bottom: 14px">
+<h3 style="font-size: 24px; font-weight: 700">Família e escola, juntas</h3>
+<p style="color: var(--mut); font-size: 16px; margin-top: 6px">Reuniões periódicas, relatórios de desenvolvimento e a plataforma AgendaEdu, para acompanhar comunicados, atividades e a vida escolar em tempo real.</p>
+</article>
+</div>
+</section>
+</div>
+
+<!-- ============ INFRAESTRUTURA ============ -->
+<div v-if="isInfra" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Infraestrutura</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px">Conheça o nosso espaço</h1>
+<p style="font-size: 19px; max-width: 720px; margin-top: 12px">Ambientes pensados para o conforto, a segurança e o aprendizado, do maternalzinho ao Fundamental, mesmo nos dias mais quentes do Recife.</p>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 48px 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div v-for="e in infra" style="display:contents">
+<article style="background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<img :src="e.img" :alt="e.t" style="width: 100%; height: 240px; object-fit: cover; display: block">
+<div style="padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 6px">
+<h2 style="font-size: 22px; font-weight: 700">{{e.t}}</h2>
+<p style="color: var(--mut); font-size: 16px">{{e.x}}</p>
+</div>
+</article>
+</div>
+</div>
+<div style="margin-top: 40px; background: var(--a); border-radius: 28px; padding: 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<h2 style="font-size: clamp(26px, 3.6vw, 34px); font-weight: 800; flex: 1 1 380px">Quer ver de perto? Vamos adorar receber você.</h2>
+<button @click="goContato" style="background: var(--ink); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Agende uma visita</button>
+</div>
+</section>
+</div>
+
+<!-- ============ BLOG: LISTA ============ -->
+<div v-if="isBlogList" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Blog do Castelo</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px">Novidades, comunicados e datas especiais</h1>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 36px 20px 56px">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">Tipo de postagem</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<div v-for="c in cats" style="display:contents">
+<button @click="c.pick" :aria-pressed="c.on" :style="`border: 1.5px solid ${c.bd}; background: ${c.bg}; color: ${c.fg}; border-radius: 999px; padding: 9px 16px; min-height: 44px; font-weight: 700; font-size: 15px`">{{c.label}} ({{c.n}})</button>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">Organizar por</span>
+<div style="display: flex; gap: 8px">
+<button @click="byData" :style="`border: 1.5px solid var(--p); background: ${gd.bg}; color: ${gd.fg}; border-radius: 999px; padding: 9px 16px; min-height: 44px; font-weight: 700; font-size: 15px`">Data</button>
+<button @click="byTipo" :style="`border: 1.5px solid var(--p); background: ${gt.bg}; color: ${gt.fg}; border-radius: 999px; padding: 9px 16px; min-height: 44px; font-weight: 700; font-size: 15px`">Tipo</button>
+</div>
+</div>
+</div>
+
+<div v-for="g in groups" style="display:contents">
+<div style="margin-top: 36px">
+<div style="display: flex; align-items: baseline; gap: 12px; border-bottom: 2px solid var(--ink); padding-bottom: 6px">
+<h2 style="font-size: 28px; font-weight: 800">{{g.label}}</h2>
+<span style="color: var(--mut); font-weight: 700; font-size: 15px">{{g.count}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 18px">
+<div v-for="p in g.posts" style="display:contents">
+<button @click="p.open" style="text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 0; overflow: hidden; display: flex; flex-direction: column; color: var(--ink)">
+<img :src="p.img" alt="" style="width: 100%; height: 230px; object-fit: cover; object-position: top; display: block">
+<span style="padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px"><span style="background: var(--tint); color: var(--p); font-weight: 800; border-radius: 999px; padding: 3px 10px">{{p.c}}</span><span style="color: var(--mut); font-weight: 700">{{p.data}}</span></span>
+<span style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.15">{{p.t}}</span>
+<span style="color: var(--mut); font-size: 15px; line-height: 1.45">{{p.r}}</span>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ BLOG: POSTAGEM ============ -->
+<div v-if="isPost" style="display:contents">
+<article style="max-width: 760px; margin: 0 auto; padding: 36px 20px 64px; display: flex; flex-direction: column; gap: 16px">
+<div><button @click="backBlog" style="background: none; border: 0; color: var(--p); font-weight: 800; padding: 10px 0; min-height: 44px">← Voltar ao blog</button></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px"><span style="background: var(--tint); color: var(--p); font-weight: 800; border-radius: 999px; padding: 4px 12px">{{post.c}}</span><span style="color: var(--mut); font-weight: 700">{{post.data}}</span></div>
+<h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 800">{{post.t}}</h1>
+<img :src="post.img" :alt="post.t" style="width: 100%; max-height: 680px; object-fit: contain; border-radius: 24px; background: var(--tint); display: block">
+<p style="font-size: 20px; font-weight: 600">{{post.r}}</p>
+<div v-for="par in post.x" style="display:contents">
+<p style="color: var(--mut); font-size: 18px">{{par}}</p>
+</div>
+</article>
+</div>
+
+<!-- ============ SELO SUSTENTÁVEL ============ -->
+<div v-if="isSelo" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Selo Sustentável</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px; max-width: 760px">Rumo a 2027: Castelo Encantado sustentável</h1>
+<p style="font-size: 19px; max-width: 720px; margin-top: 12px">O cuidado com o meio ambiente começa com pequenas atitudes. Até 2027, pretendemos alcançar o selo de Escola Sustentável.</p>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 48px 20px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px">
+<img src="assets/selo-00.jpg" alt="Selo Escola Sustentável" style="width: 100%; height: 250px; object-fit: contain; border-radius: 22px; background: #fff; border: 1px solid var(--line); display: block; box-sizing: border-box">
+<img src="assets/proposta-12.jpg" alt="Alunas em frente ao mural do Dia da Água" style="width: 100%; height: 250px; object-fit: cover; border-radius: 22px; display: block">
+<img src="assets/news-20.jpg" alt="Mudas cultivadas na horta da escola" style="width: 100%; height: 250px; object-fit: cover; border-radius: 22px; display: block">
+</div>
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800">O que já fazemos</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 20px">
+<div v-for="j in jaFazemos" style="display:contents">
+<article style="background: var(--tint); border-radius: 22px; padding: 24px">
+<h3 style="font-size: 22px; font-weight: 700; color: var(--p)">{{j.t}}</h3>
+<p style="color: var(--mut); font-size: 16px; margin-top: 4px">{{j.x}}</p>
+</article>
+</div>
+</div>
+<h2 style="font-size: clamp(28px, 4vw, 38px); font-weight: 800; margin-top: 48px">Metas para 2027</h2>
+<ol style="margin: 20px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px">
+<div v-for="m in metas" style="display:contents">
+<li style="background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 18px 20px; display: flex; gap: 16px; align-items: flex-start">
+<span style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; color: var(--p); min-width: 38px">{{m.n}}</span>
+<span><strong style="font-size: 18px">{{m.t}}</strong><br><span style="color: var(--mut); font-size: 16px">{{m.x}}</span></span>
+</li>
+</div>
+</ol>
+<div style="margin-top: 40px; background: var(--tint); border-radius: 28px; padding: 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 380px"><h2 style="font-size: clamp(26px, 3.6vw, 34px); font-weight: 800">Quiz Verde para as crianças</h2><p style="color: var(--mut)">Seis perguntas para testar o que os pequenos sabem sobre cuidar da natureza.</p></div>
+<button @click="goVerde" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Jogar o quiz</button>
+</div>
+</section>
+</div>
+
+<!-- ============ QUIZ: TURMA IDEAL ============ -->
+<div v-if="isTurma" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Quiz para as famílias</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px; max-width: 760px">Qual a turma ideal para o seu filho?</h1>
+<p style="font-size: 19px; max-width: 640px; margin-top: 12px">Duas perguntas rápidas e você descobre a turma e o que a criança vai viver nela.</p>
+</div>
+</section>
+<section style="max-width: 820px; margin: 0 auto; padding: 48px 20px 64px">
+<div v-if="qStep1" style="display:contents">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">Pergunta 1 de 2</span>
+<h2 style="font-size: clamp(26px, 3.6vw, 34px); font-weight: 800">Quantos anos a criança terá completado até 31 de março de 2027?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px">
+<div v-for="a in ages" style="display:contents">
+<button @click="a.pick" style="background: #fff; color: var(--ink); border: 1.5px solid #8A8E94; border-radius: 16px; padding: 16px 10px; min-height: 56px; font-weight: 800; font-size: 18px">{{a.label}}</button>
+</div>
+</div>
+</div>
+</div>
+<div v-if="qStep2" style="display:contents">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">Pergunta 2 de 2</span>
+<h2 style="font-size: clamp(26px, 3.6vw, 34px); font-weight: 800">Qual período você procura?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<div v-for="pp in pers" style="display:contents">
+<button @click="pp.pick" style="background: #fff; color: var(--ink); border: 1.5px solid #8A8E94; border-radius: 16px; padding: 20px 10px; min-height: 56px; font-weight: 800; font-size: 18px">{{pp.label}}</button>
+</div>
+</div>
+<div><button @click="qReset" style="background: none; border: 0; color: var(--p); font-weight: 800; padding: 10px 0; min-height: 44px">← Voltar</button></div>
+</div>
+</div>
+<div v-if="qDone" style="display:contents">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 28px; overflow: hidden">
+<img :src="tr.img" alt="" style="width: 100%; height: 300px; object-fit: cover; display: block">
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">{{tr.resumo}}</span>
+<div><span style="font-weight: 800; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--p)">{{tr.seg}}</span>
+<h2 style="font-size: clamp(34px, 5vw, 48px); font-weight: 800">A turma ideal é o {{tr.nome}}</h2></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+<div v-for="pt in tr.pts" style="display:contents">
+<li style="display: flex; gap: 12px; align-items: flex-start"><span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 3px; background: var(--p); flex: none; margin-top: 8px"></span><span>{{pt}}</span></li>
+</div>
+</ul>
+<p style="color: var(--mut); font-size: 15px">A turma é uma indicação pela idade. A secretaria confirma a vaga e a turma na matrícula.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button @click="goContato" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Agendar uma visita</button>
+<a href="https://wa.me/message/RUURY44UE3QYP1" style="background: #fff; color: var(--p); border: 2px solid var(--p); text-decoration: none; border-radius: 999px; padding: 12px 26px; font-weight: 800">Falar no WhatsApp</a>
+<button @click="qReset" style="background: none; border: 0; color: var(--mut); font-weight: 800; padding: 12px 8px; text-decoration: underline">Refazer</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ QUIZ VERDE ============ -->
+<div v-if="isVerde" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Quiz para as crianças</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px">Quiz Verde</h1>
+<p style="font-size: 19px; max-width: 640px; margin-top: 12px">Você sabe cuidar da natureza? Responda e descubra se já é um guardião do Castelo Verde.</p>
+</div>
+</section>
+<section style="max-width: 820px; margin: 0 auto; padding: 48px 20px 64px">
+<div v-if="vPlaying" style="display:contents">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 32px; display: flex; flex-direction: column; gap: 18px">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">Pergunta {{vNum}} de {{vTotal}} · Acertos: {{vScore}}</span>
+<h2 style="font-size: clamp(26px, 3.6vw, 34px); font-weight: 800">{{vQ}}</h2>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div v-for="o in vOpts" style="display:contents">
+<button @click="o.pick" :style="`text-align: left; background: ${o.bg}; color: var(--ink); border: ${o.bw} solid ${o.bd}; border-radius: 16px; padding: 16px 20px; min-height: 60px; font-weight: 800; font-size: 19px; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; justify-content: space-between`"><span>{{o.label}}</span><span style="font-size: 14px; color: var(--p)">{{o.mark}}</span></button>
+</div>
+</div>
+<div v-if="vAns" style="display:contents">
+<div role="status" style="background: var(--tint); border-radius: 16px; padding: 16px 20px"><strong style="font-family: 'Baloo 2', sans-serif; font-size: 22px; color: var(--p)">{{vHead}}</strong><p>{{vWhy}}</p></div>
+<div><button @click="vNext" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">{{vNextLabel}}</button></div>
+</div>
+</div>
+</div>
+<div v-if="vDone" style="display:contents">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 28px; overflow: hidden">
+<img src="assets/news-20.jpg" alt="Mudas cultivadas na horta da escola" style="width: 100%; height: 280px; object-fit: cover; display: block">
+<div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+<span style="font-weight: 800; font-size: 14px; color: var(--mut)">Você acertou {{vScore}} de {{vTotal}}</span>
+<h2 style="font-size: clamp(34px, 5vw, 48px); font-weight: 800; color: var(--p)">{{vTitle}}</h2>
+<p style="font-size: 19px">{{vMsg}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px">
+<button @click="vReset" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Jogar de novo</button>
+<button @click="goSelo" style="background: #fff; color: var(--p); border: 2px solid var(--p); border-radius: 999px; padding: 12px 26px; font-weight: 800">Conhecer o Projeto Verde</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- ============ CONTATO ============ -->
+<div v-if="isContato" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Contato</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px">Venha conhecer o Castelo</h1>
+<p style="font-size: 19px; max-width: 680px; margin-top: 12px">Agende uma visita, tire suas dúvidas ou peça informações sobre matrículas. Respondemos o quanto antes.</p>
+</div>
+</section>
+<section style="max-width: 1160px; margin: 0 auto; padding: 48px 20px; display: flex; flex-wrap: wrap; gap: 32px">
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div><div style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mut)">Endereço</div><div style="font-weight: 700">Rua Clodomiro Selva, 194 — Casa Amarela<br>Recife, PE · CEP 52070-470</div></div>
+<div><div style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mut)">Telefone</div><a href="tel:+558132694368" style="font-weight: 700">(81) 3269-4368</a></div>
+<div><div style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mut)">WhatsApp</div><a href="https://wa.me/message/RUURY44UE3QYP1" style="font-weight: 700">(81) 9 8682-4364</a></div>
+<div><div style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mut)">E-mail</div><a href="mailto:contato@escolacasteloencantado.com" style="font-weight: 700; word-break: break-all">contato@escolacasteloencantado.com</a></div>
+<div><div style="font-weight: 800; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mut)">Horário de atendimento</div><div style="font-weight: 700">[HORÁRIO DA SECRETARIA]</div></div>
+</div>
+<div style="border-radius: 22px; background: var(--tint); display: flex; flex-direction: column; gap: 12px; align-items: center; padding: 0 0 18px; overflow: hidden; text-align: center">
+<img src="assets/infra-00.jpg" alt="Fachada da Escola Castelo Encantado" style="width: 100%; height: 260px; object-fit: cover; display: block">
+<a href="https://www.google.com/maps/search/?api=1&amp;query=R.+Clodomiro+Selva,+194+-+Casa+Amarela,+Recife+-+PE" style="font-weight: 800">Abrir no Google Maps</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="https://www.instagram.com/casteloencantado01/" style="background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; font-weight: 800; text-decoration: none">Instagram</a>
+<a href="https://www.youtube.com/@escolacasteloencantado339" style="background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; font-weight: 800; text-decoration: none">YouTube</a>
+<a href="https://www.facebook.com/profile.php?id=100025131595741" style="background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; font-weight: 800; text-decoration: none">Facebook</a>
+</div>
+</div>
+<form @submit="send" style="flex: 1.3 1 400px; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+<img src="assets/contato-00.jpg" alt="Aluna com fantasia em desfile da escola" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; display: block">
+<img src="assets/contato-01.jpg" alt="Aluna sorrindo com boné do Brasil" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; display: block">
+<img src="assets/contato-02.jpg" alt="Aluna sorrindo com o uniforme da escola" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; display: block">
+<img src="assets/contato-03.jpg" alt="Aluna com boina vermelha em evento da escola" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px; display: block">
+</div>
+<h2 style="font-size: 28px; font-weight: 800">Envie uma mensagem</h2>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700">Seu nome<input type="text" name="nome" required style="font: inherit; padding: 12px 14px; border: 1.5px solid #8A8E94; border-radius: 12px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700">WhatsApp ou telefone<input type="tel" name="fone" required style="font: inherit; padding: 12px 14px; border: 1.5px solid #8A8E94; border-radius: 12px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700">Assunto<select name="assunto" style="font: inherit; padding: 12px 14px; border: 1.5px solid #8A8E94; border-radius: 12px; background: #fff"><option>Agendar uma visita</option><option>Matrículas</option><option>Dúvidas gerais</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700">Mensagem<textarea name="msg" rows="4" style="font: inherit; padding: 12px 14px; border: 1.5px solid #8A8E94; border-radius: 12px; resize: vertical"></textarea></label>
+<button type="submit" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800; align-self: flex-start">Enviar mensagem</button>
+<div v-if="sent" style="display:contents">
+<p role="status" style="background: var(--tint); color: var(--p); font-weight: 700; border-radius: 12px; padding: 12px 14px">Mensagem enviada! (Demonstração: no site final, ela chega no e-mail ou WhatsApp da escola.)</p>
+</div>
+</form>
+</section>
+</div>
+
+<!-- ============ POLÍTICA DE PRIVACIDADE ============ -->
+<div v-if="isPriv" style="display:contents">
+<section style="background: var(--p); color: #fff">
+<div style="max-width: 1160px; margin: 0 auto; padding: 56px 20px">
+<span style="font-weight: 800; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--a)">Privacidade</span>
+<h1 style="font-size: clamp(38px, 5.5vw, 60px); font-weight: 800; margin-top: 8px; max-width: 800px">Política de Privacidade e Cookies</h1>
+<p style="font-size: 19px; max-width: 720px; margin-top: 12px">Como a Escola Castelo Encantado cuida dos dados das famílias que visitam este site, de acordo com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+</div>
+</section>
+<section style="max-width: 820px; margin: 0 auto; padding: 48px 20px 64px; display: flex; flex-direction: column; gap: 30px">
+<p style="background: var(--tint); border-radius: 14px; padding: 14px 18px; font-size: 15px; color: var(--mut)">Minuta para validação da escola. Última atualização: [DATA].</p>
+<div v-for="pv in priv" style="display:contents">
+<div>
+<h2 style="font-size: 26px; font-weight: 800">{{pv.t}}</h2>
+<div v-for="px in pv.x" style="display:contents">
+<p style="color: var(--mut); margin-top: 8px">{{px}}</p>
+</div>
+</div>
+</div>
+<div><button @click="ckReopen" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 14px 26px; font-weight: 800">Rever minhas preferências de cookies</button></div>
+</section>
+</div>
+
+</main>
+
+<!-- Rodapé -->
+<footer style="background: var(--ink); color: #fff">
+<div aria-hidden="true" style="height: 16px; background: repeating-linear-gradient(90deg, var(--bg) 0 30px, transparent 30px 60px)"></div>
+<div style="max-width: 1160px; margin: 0 auto; padding: 40px 20px 28px; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between">
+<div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 28px; color: var(--a)">Castelo Encantado</span>
+<span style="color: #D0D2D5; max-width: 340px">Educação com afeto, fé e compromisso com o futuro, há 27 anos em Casa Amarela.</span>
+</div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 4px; color: #D0D2D5">
+<strong style="color: #fff">Onde estamos</strong>
+<span>Rua Clodomiro Selva, 194 — Casa Amarela</span>
+<span>Recife, PE · CEP 52070-470</span>
+</div>
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 4px; color: #D0D2D5">
+<strong style="color: #fff">Fale com a gente</strong>
+<span>(81) 3269-4368</span>
+<span>WhatsApp (81) 9 8682-4364</span>
+<span style="word-break: break-all">contato@escolacasteloencantado.com</span>
+</div>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.18)">
+<div style="max-width: 1160px; margin: 0 auto; padding: 6px 20px; font-size: 14px; color: #D0D2D5; display: flex; flex-wrap: wrap; gap: 4px 20px; align-items: center; justify-content: space-between">
+<span>© Escola Castelo Encantado · Recife, PE</span>
+<span style="display: flex; flex-wrap: wrap; gap: 0 18px">
+<button @click="goPriv" style="background: none; border: 0; color: #D0D2D5; text-decoration: underline; padding: 12px 0; font-size: 14px">Política de Privacidade</button>
+<button @click="ckReopen" style="background: none; border: 0; color: #D0D2D5; text-decoration: underline; padding: 12px 0; font-size: 14px">Preferências de cookies</button>
+</span>
+</div>
+</div>
+</footer>
+
+<!-- Assistente virtual: Tito (aparece depois da escolha de cookies) -->
+<div v-if="cookieDone" style="display:contents">
+<div style="position: fixed; right: 16px; bottom: 16px; z-index: 60; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; max-width: calc(100vw - 32px)">
+<div v-if="chatOpen" style="display:contents">
+<section class="ce-pop" aria-label="Conversa com o Tito, assistente virtual" style="width: 370px; max-width: 100%; height: 540px; max-height: calc(100vh - 110px); background: #fff; border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 18px 50px rgba(0,0,0,0.28); display: flex; flex-direction: column; overflow: hidden">
+<div style="background: var(--p); color: #fff; padding: 12px 8px 12px 16px; display: flex; align-items: center; gap: 12px">
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex: none">
+<svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="14" width="14" height="15" fill="#C6C8CC"></rect><rect x="8" y="11" width="16" height="4" fill="#9B9EA3"></rect><path d="M9 11 L16 1 L23 11 Z" fill="var(--p)"></path><circle cx="13" cy="19" r="1.6" fill="#2E3136"></circle><circle cx="19" cy="19" r="1.6" fill="#2E3136"></circle><path d="M12.5 23 Q16 26.5 19.5 23" stroke="#2E3136" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg>
+</span>
+<span style="flex: 1; line-height: 1.2"><strong style="font-family: 'Baloo 2', sans-serif; font-size: 21px">Tito</strong><br><span style="font-size: 13px; display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #ffffff; opacity: 0.9"></span>{{titoStatus}}</span></span>
+<button @click="toggleChat" aria-label="Fechar conversa" style="background: transparent; border: 0; color: #fff; width: 44px; height: 44px; font-size: 28px; line-height: 1">×</button>
+</div>
+<div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column-reverse; background: var(--bg)">
+<div aria-live="polite" style="padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div v-for="m in chatMsgs" style="display:contents">
+<div class="ce-msg" :style="`align-self: ${m.al}; max-width: 88%; background: ${m.bg}; color: ${m.fg}; border: 1px solid var(--line); border-radius: 16px; padding: 10px 14px; font-size: 15.5px; line-height: 1.45; white-space: pre-line`">{{m.text}}<div v-if="m.hasGo" style="display:contents"><button @click="m.go" style="display: block; margin-top: 10px; background: #fff; color: var(--p); border: 1.5px solid var(--p); border-radius: 999px; padding: 9px 16px; min-height: 44px; font-weight: 800; font-size: 14.5px">{{m.pl}}</button></div></div>
+</div>
+<div v-if="typing" style="display:contents">
+<div class="ce-msg" role="status" aria-label="Tito está digitando" style="align-self: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; display: flex; gap: 5px; align-items: center">
+<span class="ce-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #5A5F66"></span>
+<span class="ce-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #5A5F66; animation-delay: 0.15s"></span>
+<span class="ce-dot" style="width: 8px; height: 8px; border-radius: 50%; background: #5A5F66; animation-delay: 0.3s"></span>
+</div>
+</div>
+</div>
+</div>
+<div style="padding: 10px 12px 0; display: flex; gap: 6px; overflow-x: auto; flex: none">
+<div v-for="ch in chips" style="display:contents">
+<button @click="ch.pick" style="white-space: nowrap; background: var(--tint); color: var(--ink); border: 0; border-radius: 999px; padding: 9px 14px; min-height: 44px; font-weight: 700; font-size: 14px">{{ch.label}}</button>
+</div>
+</div>
+<form @submit="chatSend" style="display: flex; gap: 8px; padding: 12px; flex: none">
+<input name="q" type="text" autocomplete="off" aria-label="Escreva sua pergunta para o Tito" placeholder="Escreva sua pergunta" style="flex: 1; min-width: 0; font: inherit; font-size: 15.5px; padding: 11px 14px; border: 1.5px solid #8A8E94; border-radius: 999px">
+<button type="submit" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 11px 18px; font-weight: 800">Enviar</button>
+</form>
+</section>
+</div>
+<button class="ce-pop" @click="toggleChat" :aria-expanded="chatExp" style="display: flex; align-items: center; gap: 10px; background: var(--p); color: #fff; border: 3px solid #fff; border-radius: 999px; padding: 8px 20px 8px 8px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 28px rgba(0,0,0,0.3)">
+<span style="width: 42px; height: 42px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex: none">
+<svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="14" width="14" height="15" fill="#C6C8CC"></rect><rect x="8" y="11" width="16" height="4" fill="#9B9EA3"></rect><path d="M9 11 L16 1 L23 11 Z" fill="var(--p)"></path><circle cx="13" cy="19" r="1.6" fill="#2E3136"></circle><circle cx="19" cy="19" r="1.6" fill="#2E3136"></circle><path d="M12.5 23 Q16 26.5 19.5 23" stroke="#2E3136" stroke-width="1.6" fill="none" stroke-linecap="round"></path></svg>
+</span>
+Fale com o Tito
+</button>
+</div>
+</div>
+
+<!-- Aviso de cookies e privacidade -->
+<div v-if="cookieShow" style="display:contents">
+<div class="ce-pop" role="dialog" aria-labelledby="ck-titulo" aria-describedby="ck-texto" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 80; max-width: 980px; margin: 0 auto; background: #fff; color: var(--ink); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 24px 70px rgba(0,0,0,0.35); padding: 20px 22px; display: flex; flex-direction: column; gap: 14px; animation-delay: 0.4s; max-height: calc(100vh - 32px); overflow-y: auto; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; gap: 14px; align-items: flex-start">
+<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" style="flex: none"><circle cx="20" cy="20" r="17" fill="#ECEDEF" stroke="#C61108" stroke-width="2.5"></circle><circle cx="14" cy="15" r="2.6" fill="#C61108"></circle><circle cx="24" cy="12" r="2" fill="#5A5F66"></circle><circle cx="26" cy="23" r="2.8" fill="#C61108"></circle><circle cx="15" cy="26" r="2.2" fill="#5A5F66"></circle></svg>
+<div>
+<h2 id="ck-titulo" style="font-size: 22px; font-weight: 800">Cookies e privacidade</h2>
+<p id="ck-texto" style="font-size: 15.5px; color: var(--mut); margin-top: 4px">Usamos cookies para o site funcionar e, com a sua permissão, para entender como ele é usado e melhorar a sua experiência. Saiba mais na nossa <button @click="goPriv" style="background: none; border: 0; padding: 0; color: var(--p); font-weight: 800; text-decoration: underline; font-size: 15.5px">Política de Privacidade</button>.</p>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<button @click="ckToggleCustom" :aria-expanded="ckCustomExp" style="background: none; color: var(--ink); border: 0; text-decoration: underline; font-weight: 800; padding: 12px 8px; min-height: 44px">Personalizar</button>
+<button @click="ckNecessary" style="background: #fff; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 10px 20px; min-height: 44px; font-weight: 800">Só os necessários</button>
+<button @click="ckAll" style="background: var(--p); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px; min-height: 44px; font-weight: 800">Aceitar todos</button>
+</div>
+</div>
+<div v-if="ckCustomOpen" style="display:contents">
+<div class="ce-fade" style="border-top: 1px solid var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 10px">
+<label style="display: flex; gap: 12px; align-items: flex-start; background: var(--tint); border-radius: 14px; padding: 12px 14px"><input type="checkbox" :checked="true" :disabled="true" :readonly="true" style="width: 20px; height: 20px; margin-top: 3px; accent-color: #C61108"><span><strong>Necessários</strong> · sempre ativos<br><span style="font-size: 14.5px; color: var(--mut)">Fazem o site funcionar e guardam a sua escolha sobre cookies.</span></span></label>
+<label style="display: flex; gap: 12px; align-items: flex-start; background: var(--tint); border-radius: 14px; padding: 12px 14px; cursor: pointer"><input type="checkbox" :checked="ckAn" @change="toggleAn" style="width: 20px; height: 20px; margin-top: 3px; accent-color: #C61108"><span><strong>Desempenho e análise</strong><br><span style="font-size: 14.5px; color: var(--mut)">Mostram, de forma agregada, quais páginas são mais visitadas.</span></span></label>
+<label style="display: flex; gap: 12px; align-items: flex-start; background: var(--tint); border-radius: 14px; padding: 12px 14px; cursor: pointer"><input type="checkbox" :checked="ckMk" @change="toggleMk" style="width: 20px; height: 20px; margin-top: 3px; accent-color: #C61108"><span><strong>Marketing</strong><br><span style="font-size: 14.5px; color: var(--mut)">Ajudam a mostrar anúncios da escola para quem já visitou o site.</span></span></label>
+<div><button @click="ckSave" style="background: var(--ink); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px; min-height: 44px; font-weight: 800">Salvar minhas escolhas</button></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<script src="vendor/petite-vue.iife.js"></script>
+<script>
+(function () {
+var store = PetiteVue.reactive({ ver: 0 });
+function bump() { store.ver++; }
+class DCLogic {
+constructor(props) { this.props = props || {}; this.state = {}; }
+setState(u) { if (typeof u === 'function') u = u(this.state, this.props); Object.assign(this.state, u); bump(); }
+forceUpdate() { bump(); }
+}
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { page: 'home', cat: 'Todas', groupBy: 'data', post: null, sent: false, qAge: null, qPer: null, vI: 0, vPick: null, vScore: 0, chatOpen: false, msgs: [], typing: false, slide: 0, bfElapsed: 0, bfPaused: false, hover: false, now: Date.now(), ck: 'pending', ckCustom: false, ckAn: false, ckMk: false };
+this.timers = [];
+}
+componentDidMount() {
+var self = this;
+this.tick = setInterval(function () {
+var st = self.state;
+var u = { now: Date.now() };
+if (st.page === 'home' && !st.bfPaused && !st.hover) {
+var e = st.bfElapsed + 1;
+if (e >= 7) { u.slide = (st.slide + 1) % 2; u.bfElapsed = 0; } else { u.bfElapsed = e; }
+}
+self.setState(u);
+}, 1000);
+}
+componentWillUnmount() {
+clearInterval(this.tick);
+this.tClear();
+}
+go(page) {
+this.setState({ page: page, post: null, sent: false });
+try { window.scrollTo(0, 0); } catch (e) {}
+}
+goBF() {
+this.setState({ page: 'home', post: null, sent: false, slide: 0, bfElapsed: 0 });
+try { window.scrollTo(0, 0); } catch (e) {}
+}
+tLater(fn, ms) {
+this.timers.push(setTimeout(fn, ms));
+}
+tClear() {
+this.timers.forEach(function (id) { clearTimeout(id); });
+this.timers = [];
+}
+tSay(list) {
+var self = this;
+var run = function (i) {
+if (i >= list.length) return;
+var m = list[i];
+self.setState({ typing: true });
+self.tLater(function () {
+self.setState({ typing: false, msgs: self.state.msgs.concat([m]) });
+self.tLater(function () { run(i + 1); }, 450);
+}, 700 + Math.min(m.text.length * 14, 1300));
+};
+run(0);
+}
+tToggle() {
+var self = this;
+if (this.state.chatOpen) { this.tClear(); this.setState({ chatOpen: false, typing: false }); return; }
+var first = this.state.msgs.length === 0;
+var list = first ? [
+{ me: false, text: 'Oi! Eu sou o Tito, o guardião do Castelo.', page: null, pl: '' },
+{ me: false, text: 'Posso ajudar com matrículas, turmas, visitas e a estrutura da escola. Sobre o que você quer saber?', page: null, pl: '' },
+{ me: false, text: 'Psiu: a Black Friday das Fardas vai só até 30/11.', page: null, pl: 'Ver a oferta', act: 'bf' }
+] : [{ me: false, text: 'Que bom te ver de novo! Em que mais posso ajudar?', page: null, pl: '' }];
+this.setState({ chatOpen: true, typing: false });
+this.tLater(function () { self.tSay(list); }, 300);
+}
+tAsk(text, answer) {
+var self = this;
+this.tClear();
+this.setState({ typing: false, msgs: this.state.msgs.concat([{ me: true, text: text, page: null, pl: '' }]) });
+this.tLater(function () { self.tSay([answer]); }, 350);
+}
+ckSet(level, an, mk) {
+this.setState({ ck: level, ckCustom: false, ckAn: an, ckMk: mk });
+}
+renderVals() {
+var self = this;
+var s = this.state;
+var P = this.props.primary ?? '#C61108';
+var A = this.props.accent ?? '#E4E5E7';
+var MES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+var B = 'assets/';
+var NEWS = ['news-00.jpg', 'news-01.jpg', 'news-02.jpg', 'news-03.jpg', 'news-04.jpg', 'news-05.jpg', 'news-06.jpg', 'news-07.jpg', 'news-08.jpg', 'news-09.jpg', 'news-10.jpg', 'news-11.jpg', 'news-12.jpg', 'news-13.jpg', 'news-14.jpg', 'news-15.jpg', 'news-16.jpg', 'news-17.jpg', 'news-18.jpg', 'news-19.jpg', 'news-20.jpg', 'news-21.jpg', 'news-22.jpg', 'news-23.jpg'];
+var DIF = ['home-02.jpg', 'home-03.jpg', 'home-04.jpg', 'home-05.jpg'];
+var PRAT = ['proposta-01.jpg', 'proposta-02.jpg', 'proposta-03.jpg', 'proposta-04.jpg', 'proposta-06.jpg', 'proposta-11.jpg'];
+var PROG = ['proposta-07.jpg', 'proposta-08.jpg', 'proposta-09.jpg'];
+var INFRA = ['infra-00.jpg', 'infra-03.jpg', 'infra-01.jpg', 'infra-02.jpg', 'infra-05.jpg', 'infra-06.jpg', 'infra-08.jpg', 'home-06.jpg', 'infra-10.jpg', 'infra-04.jpg', 'infra-07.jpg', 'infra-11.jpg', 'infra-12.jpg'];
+var withImg = function (list, ids) { return list.map(function (it, i) { return Object.assign({}, it, { img: B + ids[i] }); }); };
+var CAL = 'Calendário';
+var COM = 'Comunicados';
+var DAT = 'Datas comemorativas';
+var INC = 'Inclusão e respeito';
+var VER = 'Projeto Verde';
+var calTxt = 'Calendário mensal com as datas e atividades do mês.';
+var raw = [
+{ d: '2025-09-01', t: 'Calendário de Setembro', c: CAL, r: calTxt, x: [] },
+{ d: '2025-08-25', t: 'Dia do Soldado', c: DAT, r: 'Coragem que inspira e valores que transformam.', x: ['O Dia do Soldado, celebrado em 25 de agosto, homenageia aqueles que dedicam suas vidas à proteção, à disciplina e à defesa da pátria. A data marca o nascimento do Duque de Caxias, patrono do Exército Brasileiro.', 'Este dia nos convida a refletir sobre coragem, disciplina, respeito e comprometimento, princípios que também inspiram o cotidiano escolar e a formação cidadã de nossas crianças.'] },
+{ d: '2025-08-11', t: 'Dia do Estudante', c: DAT, r: 'Uma celebração da curiosidade, do aprendizado e da vontade de transformar o mundo.', x: ['Ser estudante é muito mais do que frequentar a escola: é ter coragem de sonhar, questionar, experimentar e descobrir novos caminhos todos os dias.', 'Celebramos todos os estudantes que, com dedicação e entusiasmo, nos mostram que aprender é uma das maiores aventuras da vida.'] },
+{ d: '2025-08-08', t: 'Dia dos Pais: um dia de amor e gratidão', c: DAT, r: 'Uma data para celebrar o cuidado, a presença e o amor que orientam os filhos.', x: ['Ser pai vai muito além de proteger: é ensinar com o exemplo, incentivar com palavras de apoio e construir memórias que permanecem para sempre.', 'Homenageamos todos os pais, avôs, tios, responsáveis e figuras paternas que cumprem o papel de guiar com paciência e amor.'] },
+{ d: '2025-08-01', t: 'Calendário de Agosto', c: CAL, r: calTxt, x: [] },
+{ d: '2025-07-01', t: 'Férias escolares de julho', c: COM, r: 'Orientações às famílias para o período de férias.', x: ['O período de férias escolares de julho iniciou. É um momento especial para descansar, brincar, estar com a família e recarregar as energias para o próximo semestre.', 'Durante as férias, pedimos atenção à segurança em passeios, ao trânsito, à alimentação equilibrada e à hidratação, e sugerimos momentos de leitura e brincadeiras educativas.'] },
+{ d: '2025-06-05', t: 'Dia Mundial do Meio Ambiente', c: VER, r: 'Cuidar do meio ambiente é cuidar de nós mesmos.', x: ['Mais do que uma data no calendário, é um convite para repensarmos atitudes e inspirarmos as futuras gerações a viverem em harmonia com a Terra.', 'Por meio do Projeto Verde, aproximamos nossos alunos da sustentabilidade, mostrando que cada gesto, como separar o lixo, economizar água e reutilizar materiais, faz diferença.'] },
+{ d: '2025-06-01', t: 'Calendário de Junho', c: CAL, r: calTxt, x: [] },
+{ d: '2025-05-15', t: 'Chegou a plataforma AgendaEdu', c: COM, r: 'Comunicação mais clara, moderna e próxima das famílias.', x: ['A escola passa a utilizar o AgendaEdu, uma plataforma moderna e intuitiva para a comunicação entre família e escola.', 'Pelo aplicativo é possível receber comunicados em tempo real, acompanhar registros escolares, solicitar documentos de forma digital e consultar eventos e atividades.'] },
+{ d: '2025-05-14', t: 'Avaliação da OBA', c: COM, r: 'Primeira prova de Astronomia e Astronáutica da escola, do 1º ao 5º ano.', x: ['No dia 15 de maio será realizada a prova da Olimpíada Brasileira de Astronomia e Astronáutica (OBA), com participação dos alunos do 1º ao 5º ano.', 'A OBA estimula o interesse pela ciência, a curiosidade e o raciocínio. Pedimos às famílias que incentivem as crianças a participarem com dedicação e tranquilidade.'] },
+{ d: '2025-05-11', t: 'Dia das Mães: um dia de amor e gratidão', c: DAT, r: 'Uma celebração do amor em sua forma mais pura.', x: ['As mães são presença que inspira, abraço que conforta e palavra que guia. Em cada gesto simples, ensinam sobre paciência, coragem e generosidade.', 'Celebramos todas as mães: as que acompanham de perto, as que vivem na lembrança e as mães de coração, avós, tias ou cuidadoras.'] },
+{ d: '2025-05-01', t: 'Calendário de Maio', c: CAL, r: calTxt, x: [] },
+{ d: '2025-04-19', t: 'Dia dos Povos Indígenas', c: DAT, r: 'Honrar os povos indígenas é também cuidar das nossas raízes.', x: ['Um momento para reconhecermos a riqueza cultural, a sabedoria ancestral e a contribuição essencial dos primeiros habitantes do nosso país.', 'Suas tradições ensinam sobre respeito à natureza, coletividade e equilíbrio com o mundo ao redor.'] },
+{ d: '2025-04-07', t: 'Dia Nacional do Combate ao Bullying', c: INC, r: 'Combater o bullying é plantar sementes de paz para o futuro.', x: ['Mais do que uma data, é um chamado para a ação: incentivar a empatia, o diálogo e o respeito em cada espaço de convivência.', 'A mudança começa em pequenos gestos: ouvir, apoiar, respeitar e estender a mão.'] },
+{ d: '2025-04-02', t: 'Dia Mundial da Conscientização do Autismo', c: INC, r: 'Hoje e todos os dias, levantamos a bandeira do respeito e da inclusão.', x: ['Uma data dedicada a promover a inclusão, o respeito e a compreensão sobre o Transtorno do Espectro Autista (TEA).', 'Acreditamos que cada criança é única e trabalhamos para construir um ambiente acolhedor, onde todos possam se desenvolver com alegria, segurança e respeito.'] },
+{ d: '2025-04-01', t: 'Calendário de Abril', c: CAL, r: calTxt, x: [] },
+{ d: '2025-03-08', t: 'Dia Internacional da Mulher', c: DAT, r: 'Celebramos as mulheres de ontem e de hoje e inspiramos as mulheres do amanhã.', x: ['Uma data para refletirmos sobre a importância das mulheres em nossa sociedade, suas conquistas e o caminho que ainda percorremos em busca de igualdade.', 'Reconhecemos o papel fundamental de mães, professoras, funcionárias, alunas e responsáveis que diariamente contribuem com força, sensibilidade e dedicação.'] },
+{ d: '2025-02-01', t: 'Calendário de Fevereiro', c: CAL, r: calTxt, x: [] },
+{ d: '2024-12-10', t: 'Dia Internacional dos Direitos Humanos', c: INC, r: 'Os direitos humanos começam com pequenos atos: respeitar, incluir, acolher e cuidar.', x: ['Uma data criada para lembrar a importância da igualdade, da liberdade e da dignidade de todas as pessoas, formalizada em 1948 com a Declaração Universal dos Direitos Humanos.', 'Encorajamos nossos alunos e a comunidade escolar a refletirem sobre o valor da empatia e do respeito ao próximo.'] },
+{ d: '2024-12-05', t: 'Dia Mundial do Solo: a base da vida na Terra', c: VER, r: 'Jardim renovado e horta horizontal e vertical como parte do projeto pedagógico.', x: ['O solo fornece os nutrientes para o crescimento das plantas, regula o ciclo da água e sustenta ecossistemas inteiros.', 'Na horta, as crianças aprendem sobre o ciclo de vida das plantas, participam do plantio, da rega e da colheita e descobrem práticas como a compostagem.'] },
+{ d: '2024-12-03', t: 'Como fazer a diferença na vida de uma pessoa com deficiência?', c: INC, r: 'A inclusão não é um favor: é um direito.', x: ['Muitas vezes não percebemos as barreiras que existem para as pessoas com deficiência, que vão além do físico e chegam às atitudes e à falta de empatia.', 'Quatro passos para começar hoje: escute, respeite, aprenda e aja. A diferença começa com atitudes diárias.'] },
+{ d: '2024-11-20', t: 'Dia da Consciência Negra', c: DAT, r: 'Um dia de reflexão e respeito.', x: ['Uma data que nos convida a refletir sobre a igualdade racial, o respeito à diversidade e a valorização da história e da cultura afro-brasileira.', 'Durante o mês, promovemos rodas de conversa, oficinas culturais, contação de histórias e momentos de reflexão com as crianças.'] },
+{ d: '2024-11-01', t: 'Calendário de Novembro', c: CAL, r: calTxt, x: [] }
+];
+var posts = raw.map(function (p, i) {
+var a = p.d.split('-');
+return Object.assign({}, p, {
+id: i,
+img: B + NEWS[i < 10 ? i : i + 1],
+data: a[2] + ' de ' + MES[+a[1] - 1].toLowerCase() + ' de ' + a[0],
+mes: MES[+a[1] - 1] + ' de ' + a[0],
+open: function () { self.setState({ page: 'blog', post: i }); try { window.scrollTo(0, 0); } catch (e) {} }
+});
+});
+var catNames = ['Todas', COM, CAL, DAT, INC, VER];
+var cats = catNames.map(function (c) {
+var on = s.cat === c;
+return {
+label: c, on: on ? 'true' : 'false',
+n: c === 'Todas' ? posts.length : posts.filter(function (p) { return p.c === c; }).length,
+bg: on ? P : '#ffffff', fg: on ? '#ffffff' : '#2E3136', bd: on ? P : '#8A8E94',
+pick: function () { self.setState({ cat: c }); }
+};
+});
+var shown = posts.filter(function (p) { return s.cat === 'Todas' || p.c === s.cat; });
+var groups = [];
+var keyOf = s.groupBy === 'data' ? function (p) { return p.mes; } : function (p) { return p.c; };
+shown.forEach(function (p) {
+var k = keyOf(p);
+var g = groups.filter(function (x) { return x.label === k; })[0];
+if (!g) { g = { label: k, posts: [] }; groups.push(g); }
+g.posts.push(p);
+});
+if (s.groupBy === 'tipo') {
+groups.sort(function (a, b) { return catNames.indexOf(a.label) - catNames.indexOf(b.label); });
+}
+groups.forEach(function (g) { g.count = g.posts.length + (g.posts.length === 1 ? ' postagem' : ' postagens'); });
+var pages = [['home', 'Início'], ['matriculas', 'Matrículas'], ['turma', 'Turma ideal'], ['sobre', 'Sobre nós'], ['proposta', 'Proposta pedagógica'], ['infra', 'Infraestrutura'], ['blog', 'Blog'], ['selo', 'Selo Sustentável'], ['verde', 'Quiz Verde'], ['contato', 'Contato']];
+var nav = pages.map(function (pg) {
+var on = s.page === pg[0];
+return { label: pg[1], bg: on ? P : 'transparent', fg: on ? '#ffffff' : '#2E3136', go: function () { self.go(pg[0]); } };
+});
+var TURMAS = {
+mat: { nome: 'Maternalzinho', seg: 'Educação Infantil', img: B + INFRA[11], pts: ['Vivências lúdicas e sensoriais que estimulam a curiosidade e a imaginação.', 'Salas climatizadas e amplas, com fraldário equipado e tapetes macios.', 'Brinquedos próprios para os pequenos na quadra infantil.'] },
+jar: { nome: 'Jardim', seg: 'Educação Infantil', img: B + INFRA[12], pts: ['Vivências lúdicas e sensoriais do programa Explorar, Imaginar e Descobrir.', 'Atividades de percepção e memória que preparam o raciocínio lógico.', 'Aulas de inglês e espanhol desde cedo.', 'Natação, ballet, dança e musicalização.'] },
+fun: { nome: '', seg: 'Ensino Fundamental I', img: B + 'home-09.jpg', pts: ['Iniciação em astronomia e astronáutica, filosofia infantil e ciências experimentais.', 'Desafios de lógica e preparação para a Olimpíada Canguru de Matemática e a OBA.', 'Ensino bilíngue, com inglês e espanhol.', 'Desenvolvimento socioemocional com dinâmicas e projetos.'] }
+};
+var ages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function (a) { return { label: a + (a === 1 ? ' ano' : ' anos'), pick: function () { self.setState({ qAge: a }); } }; });
+var pers = ['Meio período', 'Integral'].map(function (p) { return { label: p, pick: function () { self.setState({ qPer: p }); } }; });
+var tr = { nome: '', seg: '', resumo: '', img: B + INFRA[12], pts: [] };
+if (s.qAge !== null) {
+var tb = s.qAge <= 3 ? TURMAS.mat : (s.qAge <= 5 ? TURMAS.jar : TURMAS.fun);
+tr = { nome: s.qAge >= 6 ? (s.qAge - 5) + 'º ano' : tb.nome, seg: tb.seg, img: tb.img, resumo: 'Criança com ' + s.qAge + (s.qAge === 1 ? ' ano' : ' anos') + ' · ' + (s.qPer || ''), pts: tb.pts.concat(s.qPer === 'Integral' ? ['No período integral, a criança conta com o ambiente de descanso, com camas, cobertores e travesseiros.'] : []) };
+}
+var VQ = [
+{ q: 'O que fazer com a torneira enquanto escovamos os dentes?', o: ['Fechar a torneira', 'Deixar a água correndo', 'Abrir ainda mais'], c: 0, why: 'Fechando a torneira, a gente economiza muitos litros de água todos os dias.' },
+{ q: 'Na coleta seletiva, a lixeira azul é para qual material?', o: ['Vidro', 'Papel', 'Plástico'], c: 1, why: 'Azul é papel. O plástico vai na vermelha, o vidro na verde e o metal na amarela.' },
+{ q: 'Do que as plantas da horta precisam para crescer?', o: ['Só de sombra', 'De refrigerante', 'De água, sol e terra boa'], c: 2, why: 'Com água, luz do sol e uma terra cheia de nutrientes, a plantinha cresce forte.' },
+{ q: 'Cascas de frutas e restos de verduras podem virar adubo. Como isso se chama?', o: ['Compostagem', 'Poluição', 'Desperdício'], c: 0, why: 'Na compostagem, os restos de comida viram adubo para a horta e o jardim.' },
+{ q: 'A escola usa painéis solares. De onde vem essa energia?', o: ['Da chuva', 'Do sol', 'Do vento'], c: 1, why: 'Os painéis transformam a luz do sol em energia elétrica, sem poluir.' },
+{ q: 'Qual destas atitudes ajuda a natureza?', o: ['Jogar lixo no chão', 'Desperdiçar água', 'Reutilizar materiais'], c: 2, why: 'Reutilizar é dar uma nova função ao que iria para o lixo, como fazemos nas oficinas de reciclagem.' }
+];
+var vDone = s.vI >= VQ.length;
+var vq = VQ[Math.min(s.vI, VQ.length - 1)];
+var vAns = s.vPick !== null;
+var vOpts = vq.o.map(function (t, k) {
+var isC = k === vq.c;
+var isP = s.vPick === k;
+return { label: t, mark: vAns ? (isC ? 'Resposta certa' : (isP ? 'Sua resposta' : '')) : '', bd: vAns && isC ? P : '#8A8E94', bw: vAns && isC ? '3px' : '1.5px', bg: vAns && isP && !isC ? '#ECEDEF' : '#ffffff',
+pick: function () { if (self.state.vPick !== null) return; self.setState({ vPick: k, vScore: self.state.vScore + (isC ? 1 : 0) }); } };
+});
+var vTitle = s.vScore === VQ.length ? 'Guardião do Castelo Verde' : (s.vScore >= 4 ? 'Protetor da Natureza' : 'Aprendiz da Natureza');
+var vMsg = s.vScore === VQ.length ? 'Você acertou tudo! A natureza agradece.' : (s.vScore >= 4 ? 'Muito bem! Você já sabe bastante sobre como cuidar do planeta.' : 'Você está aprendendo. Jogue de novo e descubra as respostas!');
+var norm = function (t) { return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+var ZAP = 'WhatsApp (81) 9 8682-4364';
+var KB = [
+{ k: ['black', 'friday', 'farda', 'uniforme', 'promo', 'oferta', 'desconto'], a: 'Na Black Friday das Fardas, matrículas e rematrículas 2027 feitas até 30/11 têm condições especiais. Os detalhes a secretaria passa pelo ' + ZAP + '.', page: null, pl: 'Ver a oferta', act: 'bf' },
+{ k: ['valor', 'mensalidade', 'preco', 'custa', 'quanto'], a: 'Os valores são informados pela secretaria, de acordo com a turma e o período. Chame no ' + ZAP + ' ou ligue (81) 3269-4368.', page: 'contato', pl: 'Abrir Contato' },
+{ k: ['visita', 'conhecer', 'agendar', 'agenda'], a: 'Vamos adorar receber você! Agende a visita pela página de Contato ou pelo ' + ZAP + '.', page: 'contato', pl: 'Agendar visita' },
+{ k: ['matricul', 'vaga', 'inscri', 'rematricul'], a: 'As matrículas estão abertas, com condições especiais para matrículas e rematrículas feitas até 19/12/2026. As vagas são limitadas por turma.', page: 'matriculas', pl: 'Ver Matrículas' },
+{ k: ['turma', 'idade', 'serie', 'ano', 'maternal', 'jardim', 'fundamental'], a: 'Atendemos da Educação Infantil (maternalzinho e jardim) ao Fundamental I (1º ao 5º ano). Quer descobrir em que turma a criança entra?', page: 'turma', pl: 'Descobrir a turma' },
+{ k: ['integral', 'periodo', 'turno'], a: 'Temos período integral, com um ambiente de descanso com camas, cobertores e travesseiros. Os turnos e horários a secretaria confirma pelo ' + ZAP + '.', page: null, pl: '' },
+{ k: ['horario', 'funciona', 'abre', 'fecha'], a: 'O horário de atendimento a secretaria confirma por telefone, (81) 3269-4368, ou pelo ' + ZAP + '.', page: 'contato', pl: 'Abrir Contato' },
+{ k: ['endereco', 'onde', 'local', 'fica', 'bairro', 'mapa'], a: 'Estamos na Rua Clodomiro Selva, 194, em Casa Amarela, Recife/PE. CEP 52070-470.', page: 'contato', pl: 'Ver no mapa' },
+{ k: ['telefone', 'contato', 'whats', 'zap', 'email', 'falar', 'secretaria', 'ligar'], a: 'Fale com a secretaria:\nTelefone (81) 3269-4368\n' + ZAP + '\ncontato@escolacasteloencantado.com', page: 'contato', pl: 'Abrir Contato' },
+{ k: ['inclus', 'autis', 'tea', 'tdah', 'especial'], a: 'Temos uma sala inclusiva, adaptada para crianças com TDAH, TEA e outras necessidades, com acompanhamento de fonoaudióloga e psicopedagoga.', page: 'infra', pl: 'Ver a estrutura' },
+{ k: ['ingles', 'espanhol', 'bilingue', 'idioma'], a: 'O ensino é bilíngue, com aulas de inglês e espanhol desde cedo.', page: 'proposta', pl: 'Ver a proposta' },
+{ k: ['natacao', 'piscina', 'ballet', 'danca', 'musica', 'esporte', 'atividade'], a: 'As crianças têm natação, ballet, dança e musicalização, filosofia, noções de astronomia e culinária na cozinha experimental.', page: 'infra', pl: 'Ver a estrutura' },
+{ k: ['estrutura', 'sala', 'camera', 'seguranca', 'espaco', 'quadra', 'biblioteca', 'cozinha'], a: 'São 6 salas de aula climatizadas, 8 câmeras nas áreas comuns, piscina, quadras, biblioteca, cozinha experimental e sala de ballet.', page: 'infra', pl: 'Ver a estrutura' },
+{ k: ['proposta', 'metodo', 'ensino', 'pedagog', 'crist', 'valores', 'religi'], a: 'Nossa proposta une metodologias ativas, projetos interdisciplinares e valores cristãos, respeitando o ritmo de cada aluno.', page: 'proposta', pl: 'Ver a proposta' },
+{ k: ['sustent', 'verde', 'horta', 'ambient', 'recicl'], a: 'Com o Projeto Verde, as crianças cuidam da horta e participam de oficinas de reciclagem. A meta é conquistar o Selo de Escola Sustentável até 2027.', page: 'selo', pl: 'Ver o Selo Sustentável' },
+{ k: ['blog', 'calendario', 'comunicado', 'novidade'], a: 'Os comunicados, calendários e datas especiais ficam no Blog do Castelo.', page: 'blog', pl: 'Abrir o Blog' }
+];
+var reply = function (t) {
+var n = norm(t);
+for (var i = 0; i < KB.length; i++) { for (var j = 0; j < KB[i].k.length; j++) { if (n.indexOf(KB[i].k[j]) !== -1) return KB[i]; } }
+if (/\b(oi|ola|bom dia|boa tarde|boa noite)\b/.test(n)) return { a: 'Oi! Que bom ter você aqui. Pode perguntar sobre matrículas, turmas, visitas ou a estrutura da escola.', page: null, pl: '' };
+if (/\b(obrigad|valeu)/.test(n)) return { a: 'Por nada! Se precisar, é só chamar.', page: null, pl: '' };
+return { a: 'Essa eu ainda não sei responder. A secretaria ajuda você pelo ' + ZAP + ' ou pelo telefone (81) 3269-4368.', page: 'contato', pl: 'Abrir Contato' };
+};
+var ask = function (t) { var r = reply(t); self.tAsk(t, { me: false, text: r.a, page: r.page || null, pl: r.pl || '', act: r.act || null }); };
+var chatMsgs = s.msgs.map(function (m) {
+return { text: m.text, al: m.me ? 'flex-end' : 'flex-start', bg: m.me ? P : '#ffffff', fg: m.me ? '#ffffff' : '#2E3136', hasGo: !!(m.page || m.act), pl: m.pl, go: function () { if (m.act === 'bf') self.goBF(); else self.go(m.page); } };
+});
+var BF_END = Date.parse('2026-12-01T02:59:59Z');
+var left = Math.max(0, BF_END - s.now);
+var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+var cdD = Math.floor(left / 86400000), cdH = Math.floor(left / 3600000) % 24, cdM = Math.floor(left / 60000) % 60, cdS = Math.floor(left / 1000) % 60;
+var cd = [{ n: pad(cdD), l: 'dias' }, { n: pad(cdH), l: 'horas' }, { n: pad(cdM), l: 'min' }, { n: pad(cdS), l: 'seg' }];
+var tkBase = ['Black Friday das Fardas', 'Matrícula 2027 com condições especiais', 'Só até 30/11', 'Vagas limitadas por turma'];
+var ticker = tkBase.concat(tkBase, tkBase, tkBase).map(function (t) { return { t: t }; });
+var dots = [0, 1].map(function (i) {
+var on = s.slide === i;
+return { label: i === 0 ? 'Ver destaque 1: Black Friday das Fardas' : 'Ver destaque 2: a escola', cur: on ? 'true' : 'false', w: on ? '28px' : '10px', bg: on ? '#ffffff' : 'rgba(255,255,255,0.55)', pick: function () { self.setState({ slide: i, bfElapsed: 0 }); } };
+});
+var priv = [
+{ t: 'Quem cuida dos seus dados', x: ['A Escola Castelo Encantado, na Rua Clodomiro Selva, 194, Casa Amarela, Recife/PE, CNPJ [CNPJ], é a responsável pelos dados tratados neste site.', 'Dúvidas e pedidos sobre os seus dados: contato@escolacasteloencantado.com, aos cuidados do encarregado de dados, [NOME DO ENCARREGADO].'] },
+{ t: 'Quais dados coletamos', x: ['Formulário de contato: nome, telefone ou WhatsApp, assunto e mensagem, informados por você.', 'Quiz da turma ideal: idade da criança e período desejado. As respostas servem só para mostrar o resultado na tela e não ficam guardadas.', 'Navegação: cookies e dados técnicos, como tipo de aparelho e páginas visitadas, conforme as suas escolhas no aviso de cookies.'] },
+{ t: 'Para que usamos', x: ['Para responder ao seu contato, agendar visitas e informar sobre matrículas.', 'Para manter o site funcionando com segurança.', 'Com a sua permissão, para entender como o site é usado e melhorar as páginas e as campanhas da escola.'] },
+{ t: 'Dados de crianças', x: ['Dados de crianças são tratados no melhor interesse delas e, quando necessário, com o consentimento de um dos pais ou do responsável legal, como prevê o artigo 14 da LGPD.'] },
+{ t: 'Cookies', x: ['Necessários: fazem o site funcionar e guardam a sua escolha sobre cookies. Ficam sempre ativos.', 'Desempenho e análise: mostram, de forma agregada, quais páginas são mais visitadas. Só são usados se você permitir.', 'Marketing: ajudam a mostrar anúncios da escola para quem já visitou o site. Só são usados se você permitir.', 'Você pode mudar a sua escolha a qualquer momento pelo link “Preferências de cookies”, no rodapé.'] },
+{ t: 'Compartilhamento', x: ['Não vendemos dados. Eles só são compartilhados com fornecedores que ajudam a manter o site e a comunicação da escola, como hospedagem e ferramentas de mensagens, ou quando a lei exigir.'] },
+{ t: 'Por quanto tempo guardamos', x: ['Pelo tempo necessário para cada finalidade ou para cumprir obrigações legais. Depois disso, os dados são excluídos ou anonimizados.'] },
+{ t: 'Os seus direitos', x: ['Você pode pedir a confirmação de que tratamos os seus dados, acesso, correção, anonimização, bloqueio ou eliminação, portabilidade, informações sobre compartilhamento e a revogação do consentimento, pelo e-mail contato@escolacasteloencantado.com.'] }
+];
+var chips = ['Black Friday', 'Matrículas', 'Turmas e idades', 'Agendar visita', 'Endereço', 'Estrutura', 'Falar com a secretaria'].map(function (c) { return { label: c, pick: function () { ask(c); } }; });
+var onD = s.groupBy === 'data';
+return {
+primary: P, accent: A,
+nav: nav,
+isHome: s.page === 'home', isMatriculas: s.page === 'matriculas', isSobre: s.page === 'sobre', isProposta: s.page === 'proposta',
+isInfra: s.page === 'infra', isSelo: s.page === 'selo', isContato: s.page === 'contato',
+isBlogList: s.page === 'blog' && s.post === null, isPost: s.page === 'blog' && s.post !== null,
+post: s.post !== null ? posts[s.post] : { t: '', c: '', data: '', r: '', x: [], img: B + NEWS[0] },
+goHome: function () { self.go('home'); }, goContato: function () { self.go('contato'); }, goMatriculas: function () { self.go('matriculas'); },
+goProposta: function () { self.go('proposta'); }, goInfra: function () { self.go('infra'); }, goBlog: function () { self.go('blog'); }, goSelo: function () { self.go('selo'); },
+backBlog: function () { self.setState({ post: null }); },
+byData: function () { self.setState({ groupBy: 'data' }); }, byTipo: function () { self.setState({ groupBy: 'tipo' }); },
+gd: { bg: onD ? P : '#ffffff', fg: onD ? '#ffffff' : '#2E3136' }, gt: { bg: onD ? '#ffffff' : P, fg: onD ? '#2E3136' : '#ffffff' },
+send: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ sent: true }); },
+sent: s.sent,
+isTurma: s.page === 'turma', isVerde: s.page === 'verde',
+goTurma: function () { self.go('turma'); }, goVerde: function () { self.go('verde'); },
+ages: ages, pers: pers, tr: tr,
+qStep1: s.qAge === null, qStep2: s.qAge !== null && s.qPer === null, qDone: s.qAge !== null && s.qPer !== null,
+qReset: function () { self.setState({ qAge: null, qPer: null }); },
+vPlaying: !vDone, vDone: vDone, vNum: Math.min(s.vI + 1, VQ.length), vTotal: VQ.length, vQ: vq.q, vWhy: vq.why, vOpts: vOpts, vAns: vAns,
+vHead: vAns ? (s.vPick === vq.c ? 'Isso mesmo!' : 'Quase!') : '',
+vNextLabel: s.vI + 1 >= VQ.length ? 'Ver meu resultado' : 'Próxima pergunta',
+vNext: function () { self.setState({ vI: self.state.vI + 1, vPick: null }); },
+vReset: function () { self.setState({ vI: 0, vPick: null, vScore: 0 }); },
+vScore: s.vScore, vTitle: vTitle, vMsg: vMsg,
+chatOpen: s.chatOpen, chatMsgs: chatMsgs, chips: chips, typing: s.typing, chatExp: s.chatOpen ? 'true' : 'false',
+titoStatus: s.typing ? 'digitando…' : 'online · guardião do Castelo',
+toggleChat: function () { self.tToggle(); },
+goBF: function () { self.goBF(); },
+ticker: ticker, cd: cd, cdText: cd[0].n + ' dias, ' + cd[1].n + ' horas e ' + cd[2].n + ' minutos',
+isSlide0: s.slide === 0, isSlide1: s.slide === 1, heroBg: s.slide === 0 ? '#1B1D20' : P,
+hoverOn: function () { self.setState({ hover: true }); }, hoverOff: function () { self.setState({ hover: false }); },
+prevSlide: function () { self.setState({ slide: (self.state.slide + 1) % 2, bfElapsed: 0 }); },
+nextSlide: function () { self.setState({ slide: (self.state.slide + 1) % 2, bfElapsed: 0 }); },
+togglePause: function () { self.setState({ bfPaused: !self.state.bfPaused }); },
+bfPaused: s.bfPaused, bfPlaying: !s.bfPaused, pauseLabel: s.bfPaused ? 'Continuar a troca automática' : 'Pausar a troca automática',
+dots: dots, bfProg: Math.round(s.bfElapsed / 7 * 100) + '%', progTr: s.bfElapsed === 0 ? 'none' : 'width 1s linear',
+isPriv: s.page === 'privacidade', priv: priv, goPriv: function () { self.go('privacidade'); },
+cookieShow: s.ck === 'pending', cookieDone: s.ck !== 'pending',
+ckCustomOpen: s.ckCustom, ckCustomExp: s.ckCustom ? 'true' : 'false', ckAn: s.ckAn, ckMk: s.ckMk,
+ckAll: function () { self.ckSet('all', true, true); },
+ckNecessary: function () { self.ckSet('necessary', false, false); },
+ckSave: function () { self.ckSet('custom', self.state.ckAn, self.state.ckMk); },
+ckToggleCustom: function () { self.setState({ ckCustom: !self.state.ckCustom }); },
+toggleAn: function () { self.setState({ ckAn: !self.state.ckAn }); },
+toggleMk: function () { self.setState({ ckMk: !self.state.ckMk }); },
+ckReopen: function () { self.tClear(); self.setState({ ck: 'pending', ckCustom: true, chatOpen: false, typing: false }); },
+chatSend: function (e) { if (e && e.preventDefault) e.preventDefault(); var f = e.target; var v = ((f.elements.q && f.elements.q.value) || '').trim(); if (!v) return; f.reset(); ask(v); },
+cats: cats, groups: groups,
+latest: posts.filter(function (p) { return p.c !== CAL; }).slice(0, 3),
+numeros: [
+{ n: '27', t: 'anos de história' },
+{ n: '6', t: 'salas de aula climatizadas' },
+{ n: '8', t: 'câmeras nas áreas comuns' },
+{ n: '2', t: 'idiomas: inglês e espanhol' }
+],
+diferenciais: withImg([
+{ t: 'Ensino bilíngue', foto: 'Foto: aula de inglês', x: 'Aulas de inglês e espanhol que ampliam as oportunidades e habilidades linguísticas desde cedo.' },
+{ t: 'Desenvolvimento socioemocional', foto: 'Foto: crianças em grupo', x: 'Empatia, resiliência e cooperação para formar cidadãos conscientes e preparados para o futuro.' },
+{ t: 'Ética e valores cristãos', foto: 'Foto: momento de valores', x: 'Uma educação que forma crianças éticas, responsáveis, com respeito e amor ao próximo.' },
+{ t: 'Aprendizado por experiências', foto: 'Foto: atividade prática', x: 'Abordagem prática e interativa que desperta a curiosidade e o prazer em aprender.' }
+], DIF),
+atividades: ['Aulas de natação', 'Ballet, dança e musicalização', 'Filosofia e noções de astronomia', 'Culinária na cozinha experimental', 'Horta, jardim e Projeto Verde'],
+sobre: [
+{ t: 'Nossos valores', x: 'Respeito, empatia, responsabilidade e amor ao próximo. Valorizamos o trabalho em equipe, a integridade e a compaixão, dentro e fora da escola.' },
+{ t: 'Objetivos e expectativas', x: 'Formar crianças que desenvolvam habilidades acadêmicas e uma base sólida de valores, com autoconfiança, curiosidade e um forte senso de ética.' },
+{ t: 'Compromisso com o bem-estar', x: 'Um espaço de paz, segurança e alegria, com profissionais dedicados que respeitam o ritmo e as necessidades de cada aluno.' },
+{ t: 'Aperfeiçoamento contínuo', x: 'Investimos em capacitação e inovação pedagógica, com uma proposta atualizada regularmente segundo as melhores práticas educacionais.' }
+],
+pilares: [
+{ n: '01', t: 'Excelência acadêmica e pensamento crítico' },
+{ n: '02', t: 'Consciência cidadã e ética' },
+{ n: '03', t: 'Criatividade e inovação' },
+{ n: '04', t: 'Sustentabilidade com responsabilidade global' }
+],
+praticas: withImg([
+{ t: 'Aprendizagem ativa e experiencial', x: 'Projetos temáticos em que as crianças aprendem fazendo, desenvolvendo raciocínio lógico, criatividade e resolução de problemas.' },
+{ t: 'Desenvolvimento integral', x: 'Atividades lúdicas, jogos cooperativos e projetos coletivos que cuidam das esferas emocional, social e física.' },
+{ t: 'Ambiente colaborativo e acolhedor', x: 'Os alunos trabalham juntos, compartilham ideias e valorizam as diferenças, em um espaço onde se sentem seguros.' },
+{ t: 'Inclusão de necessidades especiais', x: 'Práticas que incentivam a convivência e o respeito às diferenças, celebrando a diversidade como fonte de aprendizado.' },
+{ t: 'Natureza e arte', x: 'Atividades ao ar livre, jardinagem, música, teatro e artes visuais fazem parte do currículo.' },
+{ t: 'Uso consciente da tecnologia', x: 'Ferramentas digitais como apoio à descoberta e à pesquisa, de forma controlada e adequada à faixa etária.' }
+], PRAT),
+programas: withImg([
+{ t: 'Explorar, Imaginar e Descobrir', x: 'Vivências lúdicas e sensoriais na Educação Infantil; no Fundamental I, iniciação em astronomia e astronáutica, filosofia infantil e ciências experimentais.' },
+{ t: 'Raciocínio Lógico', x: 'Da percepção e memória na Educação Infantil aos desafios de lógica e jogos educativos no Fundamental I, com preparação para a Olimpíada Canguru.' },
+{ t: 'Refletir, Sentir e Transformar', x: 'Desenvolvimento socioemocional por meio de dinâmicas, projetos de conscientização e momentos de diálogo.' }
+], PROG),
+infra: withImg([
+{ t: 'Fachada', x: 'Na Rua Clodomiro Selva, 194, em Casa Amarela.' },
+{ t: 'Salas climatizadas', x: 'As 6 salas de aula têm ar-condicionado e ventiladores adicionais, garantindo conforto mesmo nos dias mais quentes.' },
+{ t: 'Sala inclusiva', x: 'Ambiente adaptado para crianças com TDAH, TEA e outras necessidades, com acompanhamento de fonoaudióloga e psicopedagoga.' },
+{ t: 'Áreas monitoradas', x: '8 câmeras posicionadas nas áreas de trânsito comum, com monitoramento constante dos espaços mais movimentados.' },
+{ t: 'Sala de ballet, dança e musicalização', x: 'Barra de alongamento, espelhos amplos e chão revestido com carpete para segurança e conforto.' },
+{ t: 'Cozinha experimental', x: 'Estrutura completa para aulas práticas de culinária que incentivam autonomia, criatividade e trabalho em equipe.' },
+{ t: 'Biblioteca', x: 'Literatura infantil que encanta, inspira e complementa as atividades escolares, incentivando o hábito da leitura.' },
+{ t: 'Piscina', x: 'Espaço para as aulas de natação, com banheiro e trocador exclusivos na área.' },
+{ t: 'Quadras', x: 'A quadra do Fundamental recebe os principais eventos da escola. Na infantil, playground multinível com balanço e escorregador, brinquedos para o maternalzinho e espaço livre para correr.' },
+{ t: 'Corredores', x: 'Circulação ampla e arejada entre as salas, com grades de proteção.' },
+{ t: 'Ambiente de descanso', x: 'Sala aconchegante com camas, cobertores e travesseiros para as crianças do período integral.' },
+{ t: 'Salas do maternalzinho', x: 'Climatizadas e amplas, com fraldário equipado, mesas ajustáveis e tapetes macios.' },
+{ t: 'Salas do Jardim e do Fundamental', x: 'Espaçosas, bem iluminadas e climatizadas, preparadas para o ensino bilíngue.' }
+], INFRA),
+jaFazemos: [
+{ t: 'Energia renovável', x: 'Painéis solares que reduzem a pegada de carbono da escola.' },
+{ t: 'Uso inteligente da água', x: 'Água da chuva reutilizada na irrigação de jardins e hortas.' },
+{ t: 'Mobilidade sustentável', x: 'Incentivo a caminhadas e ao uso de bicicletas por alunos e colaboradores.' },
+{ t: 'Mais verde, mais vida', x: 'Ampliação dos espaços verdes para um ambiente mais saudável.' },
+{ t: 'Conscientização ambiental', x: 'Campanhas regulares sobre reciclagem, redução de resíduos e preservação.' }
+],
+metas: [
+{ n: '1', t: 'Expansão dos espaços verdes', x: 'Aumentar em 30% as áreas verdes, com árvores em vasos, novos jardins e mais hortas.' },
+{ n: '2', t: 'Energia 100% renovável', x: 'Atender toda a demanda de energia da escola com painéis solares.' },
+{ n: '3', t: 'Reutilização total da água da chuva', x: 'Captação e armazenamento para sanitários, limpeza das áreas externas e rega.' },
+{ n: '4', t: 'Programa de compostagem', x: 'Transformar resíduos orgânicos das refeições em adubo para a horta e os jardins.' },
+{ n: '5', t: 'Espaços educativos de sustentabilidade', x: 'Uma sala verde ou laboratório ao ar livre para aulas sobre meio ambiente.' },
+{ n: '6', t: 'Redução de resíduos', x: 'Reduzir em 50% o volume gerado, ampliando a coleta seletiva.' },
+{ n: '7', t: 'Programa de mobilidade', x: '30% dos alunos e colaboradores vindo a pé, de bicicleta ou transporte coletivo.' },
+{ n: '8', t: 'Parcerias ambientais', x: 'Pelo menos 3 organizações parceiras em reflorestamento, reciclagem e educação ambiental.' },
+{ n: '9', t: 'Educação ambiental no currículo', x: 'Conteúdos de sustentabilidade integrados em todas as séries.' },
+{ n: '10', t: 'Certificação sustentável', x: 'Alcançar o Selo de Escola Sustentável com todas essas práticas.' }
+]
+};
+}
+}
+var comp = new Component({});
+var cacheVer = -1, cache = null;
+function vals() { var v = store.ver; if (v !== cacheVer) { cache = comp.renderVals(); cacheVer = v; } return cache; }
+var scope = {};
+Object.keys(comp.renderVals()).forEach(function (k) {
+Object.defineProperty(scope, k, { get: function () { return vals()[k]; }, set: function () {}, enumerable: true, configurable: true });
+});
+PetiteVue.createApp(scope).mount('#app');
+if (comp.componentDidMount) comp.componentDidMount();
+})();
+</script>
+</body>
+</html>
