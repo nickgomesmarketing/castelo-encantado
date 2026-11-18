@@ -44,7 +44,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 .ce-pop{animation:ce-pop .5s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion: reduce){.ce-marquee,.ce-rise,.ce-fade,.ce-wobble,.ce-float,.ce-pulse,.ce-twinkle,.ce-msg,.ce-dot,.ce-pop{animation:none!important}}
 </style>
-<style>[v-cloak]{display:none}</style>
+<style>[v-cloak]{display:none}
+.ce-post{font-size:18px;color:#5A5F66;display:flex;flex-direction:column;gap:14px;overflow-wrap:anywhere}
+.ce-post p,.ce-post div{margin:0}
+.ce-post b,.ce-post strong{color:#2E3136}
+.ce-post h2,.ce-post h3{color:#2E3136;margin:8px 0 0}
+.ce-post img{display:block;max-width:100%;height:auto;border-radius:20px;margin:0 auto}
+.ce-post a{color:#C61108;font-weight:700}
+.ce-post iframe{max-width:100%;border:0;border-radius:16px}
+.ce-post .separator a{margin:0!important}</style>
 </head>
 <body>
 <div id="app" v-cloak>
@@ -509,10 +517,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 <div><button @click="backBlog" style="background: none; border: 0; color: var(--p); font-weight: 800; padding: 10px 0; min-height: 44px">← Voltar ao blog</button></div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 14px"><span style="background: var(--tint); color: var(--p); font-weight: 800; border-radius: 999px; padding: 4px 12px">{{post.c}}</span><span style="color: var(--mut); font-weight: 700">{{post.data}}</span></div>
 <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 800">{{post.t}}</h1>
+<div v-if="post.html" class="ce-post" v-html="post.html"></div>
+<div v-if="!post.html" style="display:contents">
 <img :src="post.img" :alt="post.t" style="width: 100%; max-height: 680px; object-fit: contain; border-radius: 24px; background: var(--tint); display: block">
 <p style="font-size: 20px; font-weight: 600">{{post.r}}</p>
 <div v-for="par in post.x" style="display:contents">
 <p style="color: var(--mut); font-size: 18px">{{par}}</p>
+</div>
 </div>
 </article>
 </div>
@@ -961,17 +972,23 @@ var raw = [
 { d: '2024-11-20', t: 'Dia da Consciência Negra', c: DAT, r: 'Um dia de reflexão e respeito.', x: ['Uma data que nos convida a refletir sobre a igualdade racial, o respeito à diversidade e a valorização da história e da cultura afro-brasileira.', 'Durante o mês, promovemos rodas de conversa, oficinas culturais, contação de histórias e momentos de reflexão com as crianças.'] },
 { d: '2024-11-01', t: 'Calendário de Novembro', c: CAL, r: calTxt, x: [] }
 ];
+// Postagens do Blogger: quando o blog tem postagens, elas substituem a lista acima.
+var FEED = window.__ceFeed;
+if (FEED && FEED.length) raw = FEED;
 var posts = raw.map(function (p, i) {
 var a = p.d.split('-');
 return Object.assign({}, p, {
 id: i,
-img: B + NEWS[i < 10 ? i : i + 1],
+img: p.img || B + NEWS[i < 10 ? i : i + 1],
+html: p.html || '',
 data: a[2] + ' de ' + MES[+a[1] - 1].toLowerCase() + ' de ' + a[0],
 mes: MES[+a[1] - 1] + ' de ' + a[0],
 open: function () { self.setState({ page: 'blog', post: i }); try { window.scrollTo(0, 0); } catch (e) {} }
 });
 });
 var catNames = ['Todas', COM, CAL, DAT, INC, VER];
+posts.forEach(function (p) { if (catNames.indexOf(p.c) === -1) catNames.push(p.c); });
+catNames = catNames.filter(function (c) { return c === 'Todas' || posts.some(function (p) { return p.c === c; }); });
 var cats = catNames.map(function (c) {
 var on = s.cat === c;
 return {
@@ -1218,6 +1235,37 @@ Object.defineProperty(scope, k, { get: function () { return vals()[k]; }, set: f
 });
 PetiteVue.createApp(scope).mount('#app');
 if (comp.componentDidMount) comp.componentDidMount();
+
+// Blog: busca as postagens publicadas no Blogger da escola.
+var BLOG = 'https://blogcasteloencantado.blogspot.com';
+var KNOWN = ['Comunicados', 'Calendário', 'Datas comemorativas', 'Inclusão e respeito', 'Projeto Verde'];
+function clean(html) {
+  return String(html || '')
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '')
+    .replace(/(href|src)\s*=\s*("|')\s*javascript:[^"']*\2/gi, '$1="#"');
+}
+window.__ceFeedCb = function (data) {
+  try {
+    var entries = (data && data.feed && data.feed.entry) || [];
+    var tmp = document.createElement('div');
+    window.__ceFeed = entries.map(function (e) {
+      var html = clean(e.content ? e.content.$t : (e.summary ? e.summary.$t : ''));
+      tmp.innerHTML = html.replace(/<img[^>]*>/gi, '').replace(/<(\/p|\/div|\/li|\/h\d|br)\b[^>]*>/gi, ' $&');
+      var text = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+      var m = html.match(/<img[^>]+src\s*=\s*["']([^"']+)["']/i);
+      var img = m ? m[1] : (e.media$thumbnail ? e.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/w800/').replace(/=s\d+(-c)?$/, '=w800') : '');
+      var labels = (e.category || []).map(function (c) { return c.term; });
+      var cat = labels.filter(function (l) { return KNOWN.indexOf(l) !== -1; })[0] || labels[0] || 'Comunicados';
+      return { d: e.published.$t.slice(0, 10), t: e.title.$t, c: cat, r: text.length > 150 ? text.slice(0, 147).replace(/\s+\S*$/, '') + '…' : text, x: [], img: img, html: html };
+    });
+    comp.forceUpdate();
+  } catch (err) {}
+};
+var feedScript = document.createElement('script');
+feedScript.async = true;
+feedScript.src = BLOG + '/feeds/posts/default?alt=json-in-script&max-results=500&callback=__ceFeedCb';
+document.body.appendChild(feedScript);
 })();
 </script>
 </body>
