@@ -972,14 +972,22 @@ var raw = [
 { d: '2024-11-20', t: 'Dia da Consciência Negra', c: DAT, r: 'Um dia de reflexão e respeito.', x: ['Uma data que nos convida a refletir sobre a igualdade racial, o respeito à diversidade e a valorização da história e da cultura afro-brasileira.', 'Durante o mês, promovemos rodas de conversa, oficinas culturais, contação de histórias e momentos de reflexão com as crianças.'] },
 { d: '2024-11-01', t: 'Calendário de Novembro', c: CAL, r: calTxt, x: [] }
 ];
-// Postagens do Blogger: quando o blog tem postagens, elas substituem a lista acima.
-var FEED = window.__ceFeed;
-if (FEED && FEED.length) raw = FEED;
+// As postagens antigas (lista acima) ficam com as fotos delas.
+raw = raw.map(function (p, i) { return p.img ? p : Object.assign({}, p, { img: B + NEWS[i < 10 ? i : i + 1] }); });
+// Postagens do Blogger: entram junto com as antigas, em ordem de data.
+// Se uma postagem do Blogger tiver o mesmo título de uma antiga, vale a do Blogger.
+var FEED = window.__ceFeed || [];
+if (FEED.length) {
+  var seenT = {};
+  FEED.forEach(function (p) { seenT[String(p.t).trim().toLowerCase()] = 1; });
+  raw = FEED.concat(raw.filter(function (p) { return !seenT[String(p.t).trim().toLowerCase()]; }));
+  raw.sort(function (a, b) { return a.d < b.d ? 1 : (a.d > b.d ? -1 : 0); });
+}
 var posts = raw.map(function (p, i) {
 var a = p.d.split('-');
 return Object.assign({}, p, {
 id: i,
-img: p.img || B + NEWS[i < 10 ? i : i + 1],
+img: p.img,
 html: p.html || '',
 data: a[2] + ' de ' + MES[+a[1] - 1].toLowerCase() + ' de ' + a[0],
 mes: MES[+a[1] - 1] + ' de ' + a[0],
