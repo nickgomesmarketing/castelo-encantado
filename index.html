@@ -287,7 +287,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 20px">
 <div v-for="p in latest" style="display:contents">
 <button @click="p.open" style="text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 0; overflow: hidden; display: flex; flex-direction: column; gap: 8px; color: var(--ink)">
-<img :src="p.img" alt="" style="width: 100%; height: 220px; object-fit: cover; object-position: top; display: block">
+<img :src="p.img" alt="" onerror="if(window.__ceNoImg&&this.src!==window.__ceNoImg)this.src=window.__ceNoImg" style="width: 100%; height: 220px; object-fit: cover; object-position: top; display: block">
 <span style="margin: 8px 22px 0; font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--p)">{{p.c}}</span>
 <span style="margin: 0 22px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.15">{{p.t}}</span>
 <span style="margin: 0 22px 22px; color: var(--mut); font-size: 15px">{{p.data}}</span>
@@ -497,7 +497,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 18px">
 <div v-for="p in g.posts" style="display:contents">
 <button @click="p.open" style="text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 0; overflow: hidden; display: flex; flex-direction: column; color: var(--ink)">
-<img :src="p.img" alt="" style="width: 100%; height: 230px; object-fit: cover; object-position: top; display: block">
+<img :src="p.img" alt="" onerror="if(window.__ceNoImg&&this.src!==window.__ceNoImg)this.src=window.__ceNoImg" style="width: 100%; height: 230px; object-fit: cover; object-position: top; display: block">
 <span style="padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 6px">
 <span style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px"><span style="background: var(--tint); color: var(--p); font-weight: 800; border-radius: 999px; padding: 3px 10px">{{p.c}}</span><span style="color: var(--mut); font-weight: 700">{{p.data}}</span></span>
 <span style="font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.15">{{p.t}}</span>
@@ -1246,6 +1246,9 @@ if (comp.componentDidMount) comp.componentDidMount();
 
 // Blog: busca as postagens publicadas no Blogger da escola.
 var BLOG = 'https://blogcasteloencantado.blogspot.com';
+// Capa usada quando a postagem não tem foto: fundo vermelho com o castelo da escola.
+var NOIMG = 'data:image/svg+xml,' + encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'><rect width='800' height='450' fill='#C61108'/><g transform='translate(304 129) scale(3)'><rect x='19' y='39' width='26' height='17' fill='#F4F4F5'/><rect x='7' y='31' width='12' height='25' fill='#E4E5E7'/><rect x='45' y='31' width='12' height='25' fill='#E4E5E7'/><rect x='25' y='23' width='14' height='33' fill='#E4E5E7'/><path d='M7 31 L13 15 L19 31Z M45 31 L51 15 L57 31Z M25 23 L32 7 L39 23Z' fill='#2E3136'/><path d='M28.5 56 V48 a3.5 3.5 0 0 1 7 0 V56Z' fill='#C61108'/><rect x='4' y='56' width='56' height='3' rx='1' fill='#2E3136'/></g></svg>");
+window.__ceNoImg = NOIMG;
 var KNOWN = ['Comunicados', 'Calendário', 'Datas comemorativas', 'Inclusão e respeito', 'Projeto Verde'];
 function clean(html) {
   return String(html || '')
@@ -1262,10 +1265,12 @@ window.__ceFeedCb = function (data) {
       tmp.innerHTML = html.replace(/<img[^>]*>/gi, '').replace(/<(\/p|\/div|\/li|\/h\d|br)\b[^>]*>/gi, ' $&');
       var text = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
       var m = html.match(/<img[^>]+src\s*=\s*["']([^"']+)["']/i);
-      var img = m ? m[1] : (e.media$thumbnail ? e.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/w800/').replace(/=s\d+(-c)?$/, '=w800') : '');
+      var img = m ? m[1] : (e.media$thumbnail ? e.media$thumbnail.url.replace(/\/s\d+(-c)?\//, '/w800/').replace(/=s\d+(-c)?$/, '=w800') : NOIMG);
+      var title = (e.title && e.title.$t ? e.title.$t : '').trim();
+      if (!title) title = text ? (text.length > 70 ? text.slice(0, 67).replace(/\s+\S*$/, '') + '…' : text) : 'Novidade do Castelo';
       var labels = (e.category || []).map(function (c) { return c.term; });
       var cat = labels.filter(function (l) { return KNOWN.indexOf(l) !== -1; })[0] || labels[0] || 'Comunicados';
-      return { d: e.published.$t.slice(0, 10), t: e.title.$t, c: cat, r: text.length > 150 ? text.slice(0, 147).replace(/\s+\S*$/, '') + '…' : text, x: [], img: img, html: html };
+      return { d: e.published.$t.slice(0, 10), t: title, c: cat, r: text.length > 150 ? text.slice(0, 147).replace(/\s+\S*$/, '') + '…' : text, x: [], img: img, html: html };
     });
     comp.forceUpdate();
   } catch (err) {}
